@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.31, created on 2017-01-02 13:23:27
-  from "C:\xampp\htdocs\BookingSys\Views\index.html" */
+/* Smarty version 3.1.31, created on 2017-01-02 16:00:37
+  from "C:\xampp\htdocs\BookingSys\Views\layout.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.31',
-  'unifunc' => 'content_586a463fe68414_54644869',
+  'unifunc' => 'content_586a6b154da2b5_14626246',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    'ddea3b3a41089dc9aa3e3128ae60448d03406b39' => 
+    'f5d7a3fd947b1d36a3cd50170ce41d0b0d111502' => 
     array (
-      0 => 'C:\\xampp\\htdocs\\BookingSys\\Views\\index.html',
-      1 => 1483359804,
+      0 => 'C:\\xampp\\htdocs\\BookingSys\\Views\\layout.html',
+      1 => 1483369232,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_586a463fe68414_54644869 (Smarty_Internal_Template $_smarty_tpl) {
+function content_586a6b154da2b5_14626246 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html lang="pl">
@@ -84,7 +84,7 @@ function content_586a463fe68414_54644869 (Smarty_Internal_Template $_smarty_tpl)
 			<div class="collapse navbar-collapse"
 				id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav">
-					<li><a href="index.php?page=start">Home</a></li>
+					<li><a href="index.php">Home</a></li>
 					<li><a href="index.php?page=about">About</a></li>
 					<li><a href="index.php?page=blog">Blog</a></li>
 					<li><a href="index.php?page=contact">Contact</a></li>

@@ -1,27 +1,3 @@
-<?php
-/* Smarty version 3.1.31, created on 2017-01-02 13:23:27
-  from "C:\xampp\htdocs\BookingSys\Views\index.html" */
-
-/* @var Smarty_Internal_Template $_smarty_tpl */
-if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
-  'version' => '3.1.31',
-  'unifunc' => 'content_586a463fe68414_54644869',
-  'has_nocache_code' => false,
-  'file_dependency' => 
-  array (
-    'ddea3b3a41089dc9aa3e3128ae60448d03406b39' => 
-    array (
-      0 => 'C:\\xampp\\htdocs\\BookingSys\\Views\\index.html',
-      1 => 1483359804,
-      2 => 'file',
-    ),
-  ),
-  'includes' => 
-  array (
-  ),
-),false)) {
-function content_586a463fe68414_54644869 (Smarty_Internal_Template $_smarty_tpl) {
-?>
 <!DOCTYPE html>
 <html lang="pl">
 
@@ -52,12 +28,8 @@ function content_586a463fe68414_54644869 (Smarty_Internal_Template $_smarty_tpl)
 <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 <!--[if lt IE 9]>
-        <?php echo '<script'; ?>
- src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"><?php echo '</script'; ?>
->
-        <?php echo '<script'; ?>
- src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"><?php echo '</script'; ?>
->
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
 </head>
@@ -84,7 +56,7 @@ function content_586a463fe68414_54644869 (Smarty_Internal_Template $_smarty_tpl)
 			<div class="collapse navbar-collapse"
 				id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav">
-					<li><a href="index.php?page=start">Home</a></li>
+					<li><a href="index.php">Home</a></li>
 					<li><a href="index.php?page=about">About</a></li>
 					<li><a href="index.php?page=blog">Blog</a></li>
 					<li><a href="index.php?page=contact">Contact</a></li>
@@ -96,9 +68,7 @@ function content_586a463fe68414_54644869 (Smarty_Internal_Template $_smarty_tpl)
 	</nav>
 
 	<div class="container">
-		<?php $_smarty_tpl->_subTemplateRender(((string)$_smarty_tpl->tpl_vars['page']->value).".html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, true);
-?>
-
+		{include file="$page.html"}
 	</div>
 	<!-- /.container -->
 
@@ -113,23 +83,16 @@ function content_586a463fe68414_54644869 (Smarty_Internal_Template $_smarty_tpl)
 	</footer>
 
 	<!-- jQuery -->
-	<?php echo '<script'; ?>
- src="Views/js/jquery.js"><?php echo '</script'; ?>
->
+	<script src="Views/js/jquery.js"></script>
 
 	<!-- Bootstrap Core JavaScript -->
-	<?php echo '<script'; ?>
- src="Views/js/bootstrap.min.js"><?php echo '</script'; ?>
->
+	<script src="Views/js/bootstrap.min.js"></script>
 
 	<!-- Script to Activate the Carousel -->
-	<?php echo '<script'; ?>
->
+	<script>
     $('.carousel').carousel({
         interval: 5000 //changes the speed
     })
-    <?php echo '</script'; ?>
->
+    </script>
 </body>
-</html><?php }
-}
+</html>
