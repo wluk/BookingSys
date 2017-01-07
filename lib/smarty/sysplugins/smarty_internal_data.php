@@ -115,7 +115,7 @@ class Smarty_Internal_Data {
 	 * appends values to template variables
 	 *
 	 * @api Smarty::append()
-	 * 
+	 *
 	 * @link http://www.smarty.net/docs/en/api.append.tpl
 	 *      
 	 * @param array|string $tpl_var
@@ -186,7 +186,7 @@ class Smarty_Internal_Data {
 	 * Returns a single or all template variables
 	 *
 	 * @api Smarty::getTemplateVars()
-	 * 
+	 *
 	 * @link http://www.smarty.net/docs/en/api.get.template.vars.tpl
 	 *      
 	 * @param string $varName

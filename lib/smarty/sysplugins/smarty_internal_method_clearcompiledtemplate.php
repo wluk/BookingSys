@@ -21,7 +21,7 @@ class Smarty_Internal_Method_ClearCompiledTemplate {
 	 * Delete compiled template file
 	 *
 	 * @api Smarty::clearCompiledTemplate()
-	 * 
+	 *
 	 * @link http://www.smarty.net/docs/en/api.clear.compiled.template.tpl
 	 *      
 	 * @param \Smarty $smarty        	

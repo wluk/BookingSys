@@ -1,27 +1,25 @@
 <?php
-/* Smarty version 3.1.31, created on 2017-01-02 12:50:53
-  from "C:\xampp\htdocs\BookingSys\Views\start.html" */
+/*
+ * Smarty version 3.1.31, created on 2017-01-02 12:50:53
+ * from "C:\xampp\htdocs\BookingSys\Views\start.html"
+ */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
-if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
-  'version' => '3.1.31',
-  'unifunc' => 'content_586a3e9d074444_74576041',
-  'has_nocache_code' => false,
-  'file_dependency' => 
-  array (
-    '44b690795bceaac4d424f35a6241a408859b2f43' => 
-    array (
-      0 => 'C:\\xampp\\htdocs\\BookingSys\\Views\\start.html',
-      1 => 1483352600,
-      2 => 'file',
-    ),
-  ),
-  'includes' => 
-  array (
-  ),
-),false)) {
-function content_586a3e9d074444_74576041 (Smarty_Internal_Template $_smarty_tpl) {
-?>
+if ($_smarty_tpl->_decodeProperties ( $_smarty_tpl, array (
+		'version' => '3.1.31',
+		'unifunc' => 'content_586a3e9d074444_74576041',
+		'has_nocache_code' => false,
+		'file_dependency' => array (
+				'44b690795bceaac4d424f35a6241a408859b2f43' => array (
+						0 => 'C:\\xampp\\htdocs\\BookingSys\\Views\\start.html',
+						1 => 1483352600,
+						2 => 'file' 
+				) 
+		),
+		'includes' => array () 
+), false )) {
+	function content_586a3e9d074444_74576041(Smarty_Internal_Template $_smarty_tpl) {
+		?>
 
 <div class="row">
 	<div class="box">
@@ -54,8 +52,9 @@ function content_586a3e9d074444_74576041 (Smarty_Internal_Template $_smarty_tpl)
 				<!-- Controls -->
 				<a class="left carousel-control" href="#carousel-example-generic"
 					data-slide="prev"> <span class="icon-prev"></span>
-				</a> <a class="right carousel-control" href="#carousel-example-generic"
-					data-slide="next"> <span class="icon-next"></span>
+				</a> <a class="right carousel-control"
+					href="#carousel-example-generic" data-slide="next"> <span
+					class="icon-next"></span>
 				</a>
 			</div>
 			<h2 class="brand-before">
@@ -81,7 +80,7 @@ function content_586a3e9d074444_74576041 (Smarty_Internal_Template $_smarty_tpl)
 			</h2>
 			<hr>
 			<img class="img-responsive img-border img-left"
-				src="Views/img/intro-pic.jpg" alt="">
+				src="img/intro-pic.jpg" alt="">
 			<hr class="visible-xs">
 			<p>The boxes used in this template are nested inbetween a normal
 				Bootstrap row and the start of your column layout. The boxes will be
@@ -112,8 +111,8 @@ function content_586a3e9d074444_74576041 (Smarty_Internal_Template $_smarty_tpl)
 				Beautiful boxes <strong>to showcase your content</strong>
 			</h2>
 			<hr>
-			<p>Use as many boxes as you like, and put anything you want in
-				them! They are great for just about anything, the sky's the limit!</p>
+			<p>Use as many boxes as you like, and put anything you want in them!
+				They are great for just about anything, the sky's the limit!</p>
 			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
 				placerat diam quis nisl vestibulum dignissim. In hac habitasse
 				platea dictumst. Interdum et malesuada fames ac ante ipsum primis in
@@ -121,5 +120,7 @@ function content_586a3e9d074444_74576041 (Smarty_Internal_Template $_smarty_tpl)
 				malesuada fames ac turpis egestas.</p>
 		</div>
 	</div>
-</div><?php }
+</div><?php
+	
+}
 }

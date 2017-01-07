@@ -129,7 +129,7 @@ abstract class Smarty_Internal_TemplateBase extends Smarty_Internal_Data {
 	 * test if cache is valid
 	 *
 	 * @api Smarty::isCached()
-	 * 
+	 *
 	 * @link http://www.smarty.net/docs/en/api.is.cached.tpl
 	 *      
 	 * @param null|string|\Smarty_Internal_Template $template
@@ -255,7 +255,7 @@ abstract class Smarty_Internal_TemplateBase extends Smarty_Internal_Data {
 	 * Registers plugin to be used in templates
 	 *
 	 * @api Smarty::registerPlugin()
-	 * 
+	 *
 	 * @link http://www.smarty.net/docs/en/api.register.plugin.tpl
 	 *      
 	 * @param string $type
@@ -280,7 +280,7 @@ abstract class Smarty_Internal_TemplateBase extends Smarty_Internal_Data {
 	 * load a filter of specified type and name
 	 *
 	 * @api Smarty::loadFilter()
-	 * 
+	 *
 	 * @link http://www.smarty.net/docs/en/api.load.filter.tpl
 	 *      
 	 * @param string $type
@@ -299,7 +299,7 @@ abstract class Smarty_Internal_TemplateBase extends Smarty_Internal_Data {
 	 * Registers a filter function
 	 *
 	 * @api Smarty::registerFilter()
-	 * 
+	 *
 	 * @link http://www.smarty.net/docs/en/api.register.filter.tpl
 	 *      
 	 * @param string $type
@@ -319,7 +319,7 @@ abstract class Smarty_Internal_TemplateBase extends Smarty_Internal_Data {
 	 * Registers object to be used in templates
 	 *
 	 * @api Smarty::registerObject()
-	 * 
+	 *
 	 * @link http://www.smarty.net/docs/en/api.register.object.tpl
 	 *      
 	 * @param string $object_name        	

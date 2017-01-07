@@ -144,8 +144,7 @@ class Smarty_Internal_Compile_Section extends Smarty_Internal_Compile_Private_Fo
 				'show' => 'true',
 				'step' => 1,
 				'iteration' => "{$local}iteration" 
-		)
-		;
+		);
 		$propType = array (
 				'index' => 2,
 				'iteration' => 2,

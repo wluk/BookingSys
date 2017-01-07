@@ -1,27 +1,25 @@
 <?php
-/* Smarty version 3.1.31, created on 2017-01-02 13:19:39
-  from "C:\xampp\htdocs\BookingSys\Views\about.html" */
+/*
+ * Smarty version 3.1.31, created on 2017-01-07 16:41:18
+ * from "C:\xampp\htdocs\BookingSys\Views\about.html"
+ */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
-if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
-  'version' => '3.1.31',
-  'unifunc' => 'content_586a455b049225_94233944',
-  'has_nocache_code' => false,
-  'file_dependency' => 
-  array (
-    '89ca17b4782d69da550606ddf42f9a722e3c1063' => 
-    array (
-      0 => 'C:\\xampp\\htdocs\\BookingSys\\Views\\about.html',
-      1 => 1483359574,
-      2 => 'file',
-    ),
-  ),
-  'includes' => 
-  array (
-  ),
-),false)) {
-function content_586a455b049225_94233944 (Smarty_Internal_Template $_smarty_tpl) {
-?>
+if ($_smarty_tpl->_decodeProperties ( $_smarty_tpl, array (
+		'version' => '3.1.31',
+		'unifunc' => 'content_58710c1e206668_85954881',
+		'has_nocache_code' => false,
+		'file_dependency' => array (
+				'89ca17b4782d69da550606ddf42f9a722e3c1063' => array (
+						0 => 'C:\\xampp\\htdocs\\BookingSys\\Views\\about.html',
+						1 => 1483803076,
+						2 => 'file' 
+				) 
+		),
+		'includes' => array () 
+), false )) {
+	function content_58710c1e206668_85954881(Smarty_Internal_Template $_smarty_tpl) {
+		?>
 <div class="row">
 	<div class="box">
 		<div class="col-lg-12">
@@ -32,7 +30,7 @@ function content_586a455b049225_94233944 (Smarty_Internal_Template $_smarty_tpl)
 			<hr>
 		</div>
 		<div class="col-md-6">
-			<img class="img-responsive img-border-left" src="Views/img/slide-2.jpg"
+			<img class="img-responsive img-border-left" src="img/slide-2.jpg"
 				alt="">
 		</div>
 		<div class="col-md-6">
@@ -79,5 +77,7 @@ function content_586a455b049225_94233944 (Smarty_Internal_Template $_smarty_tpl)
 		</div>
 		<div class="clearfix"></div>
 	</div>
-</div><?php }
+</div><?php
+	
+}
 }

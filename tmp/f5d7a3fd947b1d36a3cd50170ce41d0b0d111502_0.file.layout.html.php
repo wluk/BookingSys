@@ -1,27 +1,25 @@
 <?php
-/* Smarty version 3.1.31, created on 2017-01-02 16:00:37
-  from "C:\xampp\htdocs\BookingSys\Views\layout.html" */
+/*
+ * Smarty version 3.1.31, created on 2017-01-07 16:41:13
+ * from "C:\xampp\htdocs\BookingSys\Views\layout.html"
+ */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
-if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
-  'version' => '3.1.31',
-  'unifunc' => 'content_586a6b154da2b5_14626246',
-  'has_nocache_code' => false,
-  'file_dependency' => 
-  array (
-    'f5d7a3fd947b1d36a3cd50170ce41d0b0d111502' => 
-    array (
-      0 => 'C:\\xampp\\htdocs\\BookingSys\\Views\\layout.html',
-      1 => 1483369232,
-      2 => 'file',
-    ),
-  ),
-  'includes' => 
-  array (
-  ),
-),false)) {
-function content_586a6b154da2b5_14626246 (Smarty_Internal_Template $_smarty_tpl) {
-?>
+if ($_smarty_tpl->_decodeProperties ( $_smarty_tpl, array (
+		'version' => '3.1.31',
+		'unifunc' => 'content_58710c197e4228_08191204',
+		'has_nocache_code' => false,
+		'file_dependency' => array (
+				'f5d7a3fd947b1d36a3cd50170ce41d0b0d111502' => array (
+						0 => 'C:\\xampp\\htdocs\\BookingSys\\Views\\layout.html',
+						1 => 1483803667,
+						2 => 'file' 
+				) 
+		),
+		'includes' => array () 
+), false )) {
+	function content_58710c197e4228_08191204(Smarty_Internal_Template $_smarty_tpl) {
+		?>
 <!DOCTYPE html>
 <html lang="pl">
 
@@ -30,16 +28,16 @@ function content_586a6b154da2b5_14626246 (Smarty_Internal_Template $_smarty_tpl)
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Kawiarnia Kawka">
-<meta name="author" content="Kawka">
+<meta name="description" content="Restauracja Hmm...">
+<meta name="author" content="Restauracja Hmm...">
 
-<title>Kawiarnia - Kawka</title>
+<title>Restauracja Hmm...</title>
 
 <!-- Bootstrap Core CSS -->
-<link href="Views/css/bootstrap.min.css" rel="stylesheet">
+<link href="css/bootstrap.min.css" rel="stylesheet">
 
 <!-- Custom CSS -->
-<link href="Views/css/business-casual.css" rel="stylesheet">
+<link href="css/business-casual.css" rel="stylesheet">
 
 <!-- Fonts -->
 <link
@@ -63,8 +61,8 @@ function content_586a6b154da2b5_14626246 (Smarty_Internal_Template $_smarty_tpl)
 </head>
 <body>
 	<div class="brand">Kawka</div>
-	<div class="address-bar">3481 Melrose Place | Beverly Hills, CA
-		90210 | 123.456.7890</div>
+	<div class="address-bar">3481 Melrose Place | Beverly Hills, CA 90210 |
+		123.456.7890</div>
 
 	<!-- Navigation -->
 	<nav class="navbar navbar-default" role="navigation">
@@ -96,8 +94,10 @@ function content_586a6b154da2b5_14626246 (Smarty_Internal_Template $_smarty_tpl)
 	</nav>
 
 	<div class="container">
-		<?php $_smarty_tpl->_subTemplateRender(((string)$_smarty_tpl->tpl_vars['page']->value).".html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, true);
-?>
+		<?php
+		
+$_smarty_tpl->_subTemplateRender ( (( string ) $_smarty_tpl->tpl_vars ['page']->value) . ".html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array (), 0, true );
+		?>
 
 	</div>
 	<!-- /.container -->
@@ -114,12 +114,12 @@ function content_586a6b154da2b5_14626246 (Smarty_Internal_Template $_smarty_tpl)
 
 	<!-- jQuery -->
 	<?php echo '<script'; ?>
- src="Views/js/jquery.js"><?php echo '</script'; ?>
+ src="js/jquery.js"><?php echo '</script'; ?>
 >
 
 	<!-- Bootstrap Core JavaScript -->
 	<?php echo '<script'; ?>
- src="Views/js/bootstrap.min.js"><?php echo '</script'; ?>
+ src="js/bootstrap.min.js"><?php echo '</script'; ?>
 >
 
 	<!-- Script to Activate the Carousel -->
@@ -131,5 +131,7 @@ function content_586a6b154da2b5_14626246 (Smarty_Internal_Template $_smarty_tpl)
     <?php echo '</script'; ?>
 >
 </body>
-</html><?php }
+</html><?php
+	
+}
 }

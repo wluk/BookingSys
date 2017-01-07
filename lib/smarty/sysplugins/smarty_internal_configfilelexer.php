@@ -135,8 +135,8 @@ class Smarty_Internal_Configfilelexer {
 	 *
 	 * @var array
 	 */
-	public $smarty_token_names = array () // Text for parser error messages
-;
+	public $smarty_token_names = array (); // Text for parser error messages
+
 	
 	/**
 	 * constructor
