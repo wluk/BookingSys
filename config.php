@@ -1,10 +1,29 @@
 <?php
-define ( '_SERVER_NAME', 'localhost:80' );
-define ( '_SERVER_URL', 'http://' . _SERVER_NAME );
-define ( '_APP_ROOT', '/BookingSys' );
-define ( '_APP_URL', _SERVER_URL . _APP_ROOT );
-define ( "_ROOT_PATH", dirname ( __FILE__ ) );
+// ---- Main webapp configuration
+$conf->server_name = 'localhost:8080'; // server address and port
+$conf->protocol = 'http';              // http or https
+$conf->app_root = '/Booking';        // project folder - relative to server apps folder
+$conf->action_param = 'action';        // action parameter name
+$conf->action_script = '/app/Controllers/ctrl.php'; // localisation of main action script
 
-// gdy korzysta się z bibliotek szablonowania funkcja out(&$param) nie jest już potrzebna
+// ---- Helpful values generated automatically
+$conf->root_path = dirname(__FILE__);
+$conf->server_url = $conf->protocol.'://'.$conf->server_name;
+$conf->app_url = $conf->server_url.$conf->app_root;
+$conf->action_root = $conf->app_root.$conf->action_script.'?'.$conf->action_param.'=';
+$conf->action_url = $conf->server_url.$conf->action_root;
+$conf->view_element_path = $conf->app_root.'/public';
 
+// ---- Database config - values required by Medoo
+$conf->db_type = 'mysql';
+$conf->db_server = 'localhost';
+$conf->db_name = 'simpledb';
+$conf->db_user = 'user';
+$conf->db_pass = 'pass';
+$conf->db_charset = 'utf8';
+
+// ---- Database config - optional values
+$conf->db_port = '3306';
+//$conf->db_prefix = '';
+$conf->db_option = [ PDO::ATTR_CASE => PDO::CASE_NATURAL ];
 ?>

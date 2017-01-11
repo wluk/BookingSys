@@ -1,30 +1,8 @@
 <?php
-require_once dirname ( __FILE__ ) . '/config.php';
-require_once ('lib/smarty/Smarty.class.php');
+require_once dirname(__FILE__) . '/init.php';
 
-$smarty = new Smarty ();
-$smarty->template_dir = 'Views';
-$smarty->compile_dir = 'tmp';
-$smarty->cache_dir = 'cache';
+//przekierowanie przeglądarki klienta do akcji 'home'
+//redirectTo('home');
 
-if (isset ( $_GET ['page'] ) && $_GET ['page'] == 'about') {
-	$page = 'about';
-} elseif (isset ( $_GET ['page'] ) && $_GET ['page'] == 'blog') {
-	$page = 'blog';
-} elseif (isset ( $_GET ['page'] ) && $_GET ['page'] == 'contact') {
-	$page = 'contact';
-} else {
-	$page = 'index';
-}
-
-$smarty->assign ( 'company', 'Restauracja Hmm...' );
-$smarty->assign ( 'page', $page );
-
-print '
- <script type="text/javascript">
-      var carnr;
-      carnr = "' . $page . '"
-      console.log(carnr);
- </script>';
-
-$smarty->display ( 'layout.html' )?>
+//przekazanie żądania do obsługi akcji 'home'
+forwardTo('about');
