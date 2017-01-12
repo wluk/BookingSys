@@ -17,9 +17,9 @@ $conf->view_element_path = $conf->app_root.'/public';
 // ---- Database config - values required by Medoo
 $conf->db_type = 'mysql';
 $conf->db_server = 'localhost';
-$conf->db_name = 'simpledb';
-$conf->db_user = 'user';
-$conf->db_pass = 'pass';
+$conf->db_name = 'booking_db';
+$conf->db_user = 'booking_user';
+$conf->db_pass = 'ZL3qDdV3zECjFCVZ';
 $conf->db_charset = 'utf8';
 
 // ---- Database config - optional values

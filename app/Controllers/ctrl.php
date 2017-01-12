@@ -6,26 +6,38 @@ require_once dirname(__FILE__) . '/../../init.php';
 // Jest również dostępna zmienna $action inicjowana z parametru żądania
 
 switch ($action) {
-	default : // 'home'
-		include_once getConf()->root_path.'\app\Controllers\HomeCtrl\HomeCtrl.class.php';
-		$ctrl = new HomeCtrl();
-		$ctrl->Index();
-	break;
-	case 'about' :
-        include_once getConf()->root_path.'\app\Controllers\HomeCtrl\HomeCtrl.class.php';
+//  HomeCtrl
+    default : // 'home'
+        include_once getConf()->root_path . '\app\Controllers\HomeCtrl\HomeCtrl.class.php';
+        $ctrl = new HomeCtrl();
+        $ctrl->Index();
+        break;
+    case 'about' :
+        include_once getConf()->root_path . '\app\Controllers\HomeCtrl\HomeCtrl.class.php';
         $ctrl = new HomeCtrl();
         $ctrl->About();
-	break;
-	case 'blog' :
-        include_once getConf()->root_path.'\app\Controllers\HomeCtrl\HomeCtrl.class.php';
+        break;
+    case 'blog' :
+        include_once getConf()->root_path . '\app\Controllers\HomeCtrl\HomeCtrl.class.php';
         $ctrl = new HomeCtrl();
         $ctrl->Blog();
-	break;
-	case 'contact' :
-        include_once getConf()->root_path.'\app\Controllers\HomeCtrl\HomeCtrl.class.php';
+        break;
+    case 'contact' :
+        include_once getConf()->root_path . '\app\Controllers\HomeCtrl\HomeCtrl.class.php';
         $ctrl = new HomeCtrl();
         $ctrl->Contact();
-	break;
+        break;
+//	BookingCtrl
+    case 'booking' :
+        include_once getConf()->root_path . '\app\Controllers\BookingCtrl\BookingCtrl.class.php';
+        $ctrl = new BookingCtrl();
+        $ctrl->Login();
+        break;
+    case 'login' :
+        include_once getConf()->root_path . '\app\Controllers\BookingCtrl\BookingCtrl.class.php';
+        $ctrl = new BookingCtrl();
+        $ctrl->doLogin();
+        break;
 //	case 'personDelete' :
 //		include_once getConf()->root_path.'/app/person/edit/PersonEditCtrl.class.php';
 //		$ctrl = new PersonEditCtrl();

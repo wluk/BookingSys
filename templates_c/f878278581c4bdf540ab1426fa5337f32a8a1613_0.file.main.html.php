@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2017-01-11 14:20:02
+/* Smarty version 3.1.30, created on 2017-01-12 13:24:32
   from "C:\xampp\htdocs\Booking\app\Views\main.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5876310230f458_74648151',
+  'unifunc' => 'content_58777580114204_32830680',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'f878278581c4bdf540ab1426fa5337f32a8a1613' => 
     array (
       0 => 'C:\\xampp\\htdocs\\Booking\\app\\Views\\main.html',
-      1 => 1484140792,
+      1 => 1484223773,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5876310230f458_74648151 (Smarty_Internal_Template $_smarty_tpl) {
+function content_58777580114204_32830680 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, false);
 ?>
@@ -63,6 +63,9 @@ $_smarty_tpl->inheritance->init($_smarty_tpl, false);
  src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"><?php echo '</script'; ?>
 >
     <![endif]-->
+    <?php 
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_35995877758009ae00_26820714', 'head');
+?>
 
 </head>
 <body>
@@ -89,10 +92,12 @@ $_smarty_tpl->inheritance->init($_smarty_tpl, false);
         <div class="collapse navbar-collapse"
              id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-                <li><a href="index.php">Home</a></li>
-                <li><a href="index.php?page=about">About</a></li>
-                <li><a href="index.php?page=blog">Blog</a></li>
-                <li><a href="index.php?page=contact">Contact</a></li>
+                <li><a href="<?php echo $_smarty_tpl->tpl_vars['app_url']->value;?>
+">Home</a></li>
+                <li><a href="index.php?action=about">About</a></li>
+                <li><a href="index.php?action=blog">Blog</a></li>
+                <li><a href="index.php?action=booking">Rezerwacja</a></li>
+                <li><a href="index.php?action=contact">Contact</a></li>
             </ul>
         </div>
         <!-- /.navbar-collapse -->
@@ -102,7 +107,7 @@ $_smarty_tpl->inheritance->init($_smarty_tpl, false);
 
 <div class="container">
     <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1688558763102304f59_22925305', 'top');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_16028587775800db566_71079986', 'top');
 ?>
 
 </div>
@@ -141,8 +146,17 @@ $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1688558763102304f5
 </body>
 </html>
 </html><?php }
+/* {block 'head'} */
+class Block_35995877758009ae00_26820714 extends Smarty_Internal_Block
+{
+public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
+?>
+ <?php
+}
+}
+/* {/block 'head'} */
 /* {block 'top'} */
-class Block_1688558763102304f59_22925305 extends Smarty_Internal_Block
+class Block_16028587775800db566_71079986 extends Smarty_Internal_Block
 {
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>

@@ -2,13 +2,6 @@
 
 class HomeCtrl
 {
-    private $path;
-
-    public function __construct()
-    {
-        $this->path = getConf()->view_element_path;
-    }
-
     //GET
     public function Index()
     {
@@ -38,8 +31,6 @@ class HomeCtrl
      */
     public function generateView($action)
     {
-        getSmarty()->assign('path', $this->path);
-
         getSmarty()->display(getConf()->root_path . "\\app\\Views\\Home\\" . $action . '.html');
     }
 }

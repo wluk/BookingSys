@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2017-01-11 15:16:45
+/* Smarty version 3.1.30, created on 2017-01-12 12:02:56
   from "C:\xampp\htdocs\Booking\app\Views\Home\about.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_58763e4de3f7b2_75355764',
+  'unifunc' => 'content_58776260460dd0_91836497',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '64bb4c8356296b9f7d0542ae4e3de574b09a264c' => 
     array (
       0 => 'C:\\xampp\\htdocs\\Booking\\app\\Views\\Home\\about.html',
-      1 => 1484142837,
+      1 => 1484218974,
       2 => 'file',
     ),
   ),
@@ -20,19 +20,19 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_58763e4de3f7b2_75355764 (Smarty_Internal_Template $_smarty_tpl) {
+function content_58776260460dd0_91836497 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_2632158763e4de3c184_14458295', 'top');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_264465877626044fb88_28024900', 'top');
 $_smarty_tpl->inheritance->endChild();
 $_smarty_tpl->_subTemplateRender(($_smarty_tpl->tpl_vars['conf']->value->root_path).("\app\Views\main.html"), $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 2, true);
 }
 /* {block 'top'} */
-class Block_2632158763e4de3c184_14458295 extends Smarty_Internal_Block
+class Block_264465877626044fb88_28024900 extends Smarty_Internal_Block
 {
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
@@ -47,7 +47,8 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 			<hr>
 		</div>
 		<div class="col-md-6">
-			<img class="img-responsive img-border-left" src="img/slide-2.jpg"
+			<img class="img-responsive img-border-left" src="<?php echo $_smarty_tpl->tpl_vars['path']->value;?>
+/img/slide-2.jpg"
 				alt="">
 		</div>
 		<div class="col-md-6">
