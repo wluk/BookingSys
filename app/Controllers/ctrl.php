@@ -38,6 +38,11 @@ switch ($action) {
         $ctrl = new BookingCtrl();
         $ctrl->doLogin();
         break;
+    case 'reg' :
+        include_once getConf()->root_path . '\app\Controllers\BookingCtrl\BookingCtrl.class.php';
+        $ctrl = new BookingCtrl();
+        $ctrl->registration();
+        break;
 //	case 'personDelete' :
 //		include_once getConf()->root_path.'/app/person/edit/PersonEditCtrl.class.php';
 //		$ctrl = new PersonEditCtrl();

@@ -11,27 +11,28 @@ class BookingCtrl
         $this->pass = $_REQUEST ['pass'];
     }
 
-    public function validate() {
+    public function validate()
+    {
         // sprawdzenie, czy parametry zostały przekazane
-        if (! (isset ( $this->login ) && isset ( $this->pass ))) {
+        if (!(isset ($this->login) && isset ($this->pass))) {
             // sytuacja wystąpi kiedy np. kontroler zostanie wywołany bezpośrednio - nie z formularza
             $this->msgs->addError('Błędne wywołanie aplikacji !');
         }
 
         // nie ma sensu walidować dalej, gdy brak parametrów
-        if (! $this->msgs->isError ()) {
+        if (!$this->msgs->isError()) {
 
             // sprawdzenie, czy potrzebne wartości zostały przekazane
             if ($this->login == "") {
-                $this->msgs->addError ( 'Nie podano loginu' );
+                $this->msgs->addError('Nie podano loginu');
             }
             if ($this->pass == "") {
-                $this->msgs->addError ( 'Nie podano hasła' );
+                $this->msgs->addError('Nie podano hasła');
             }
         }
 
         //nie ma sensu walidować dalej, gdy brak wartości
-        if (! $this->msgs->isError ()) {
+        if (!$this->msgs->isError()) {
 
             // sprawdzenie, czy dane logowania poprawne
             // (takie informacje najczęściej przechowuje się w bazie danych)
@@ -50,7 +51,7 @@ class BookingCtrl
             }
         }
 
-        return ! $this->msgs->isError ();
+        return !$this->msgs->isError();
     }
 
     //GET
@@ -63,7 +64,24 @@ class BookingCtrl
     public function doLogin()
     {
         $this->getParams();
+
+
+        $search_param = "login like '$this->login'";
+        $user = getDB()->select(
+            "user",
+            ["Login", "Password"],
+            ["Login" => $this->login]);
+//        tak/nie
+//        do login + msg || rezerwacja
+//        mysqli_real_escape_string() <- anty SQlInjection
         $this->generateView();
+    }
+
+
+//GET
+    public function registration()
+    {
+        $this->generateView('registration');
     }
 
     public function generateView($action)

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2017-01-12 13:10:24
+/* Smarty version 3.1.30, created on 2017-01-17 15:16:57
   from "C:\xampp\htdocs\Booking\app\Views\Booking\login.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_587772308ecc89_68128142',
+  'unifunc' => 'content_587e2759e31435_90586275',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '2d56816e1fd4ef44b3875b12a49df5c06dfb1529' => 
     array (
       0 => 'C:\\xampp\\htdocs\\Booking\\app\\Views\\Booking\\login.html',
-      1 => 1484223023,
+      1 => 1484662436,
       2 => 'file',
     ),
   ),
@@ -20,24 +20,24 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_587772308ecc89_68128142 (Smarty_Internal_Template $_smarty_tpl) {
+function content_587e2759e31435_90586275 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_2340858777230856511_81409356', 'head');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_32697587e2759db43a5_82789369', 'head');
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_16105587772308d20a4_69058384', 'top');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_28670587e2759e15ad1_01272880', 'top');
 $_smarty_tpl->inheritance->endChild();
 $_smarty_tpl->_subTemplateRender(($_smarty_tpl->tpl_vars['conf']->value->root_path).("\app\Views\main.html"), $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 2, true);
 }
 /* {block 'head'} */
-class Block_2340858777230856511_81409356 extends Smarty_Internal_Block
+class Block_32697587e2759db43a5_82789369 extends Smarty_Internal_Block
 {
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
@@ -54,7 +54,7 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 }
 /* {/block 'head'} */
 /* {block 'top'} */
-class Block_16105587772308d20a4_69058384 extends Smarty_Internal_Block
+class Block_28670587e2759e15ad1_01272880 extends Smarty_Internal_Block
 {
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
@@ -80,6 +80,8 @@ login" method="post">
         </form>
     </div>
 </div>
+
+<a href="index.php?action=reg">Rejestracja</a>
 
 <div class="row">
     <div class="box">

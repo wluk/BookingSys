@@ -1,10 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+{extends file=$conf->root_path|cat:"\app\Views\main.html"}
+{block name=top}
+<div class="row">
+    <div class="box">
+        <form action="{$conf->action_url}reg" method="post">
+            Nickname: <input type="text" name="nickname"><br>
+            Nickname: <input type="text" name="nickname"><br>
+            Nickname: <input type="text" name="nickname"><br>
+            Nickname: <input type="text" name="nickname"><br>
+            Nickname: <input type="text" name="nickname"><br>
+        </form>
+    </div>
+</div>
+
+{/block}

@@ -64,4 +64,6 @@ function getDB()
 require_once getConf()->root_path . '/lib/helper_functions.php';
 //Get action to perform from request
 $action = getFromRequest(getConf()->action_param);
+
+session_start();
 ?>
