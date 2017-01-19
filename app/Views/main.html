@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Restauracja Hmm...">
     <meta name="author" content="Restauracja Hmm...">
+    <link rel="icon" href="{$path}/icon.ico">
 
     <title>Restauracja Hmm...</title>
 
@@ -16,6 +17,7 @@
 
     <!-- Custom CSS -->
     <link href="{$path}/css/business-casual.css" rel="stylesheet">
+    <link href="{$path}/css/sticky-footer.css" rel="stylesheet">
 
     <!-- Fonts -->
     <link
@@ -24,6 +26,7 @@
     <link
             href="https://fonts.googleapis.com/css?family=Josefin+Slab:100,300,400,600,700,100italic,300italic,400italic,600italic,700italic"
             rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="../../public/css/sticky-footer.css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -34,14 +37,14 @@
     {block name=head} {/block}
 </head>
 <body>
-<div class="brand">Kawka</div>
+<div class="brand">Restauracja Hmm...</div>
 <div class="address-bar">3481 Melrose Place | Beverly Hills, CA
     90210 | 123.456.7890
 </div>
 
 <!-- Navigation -->
 <nav class="navbar navbar-default" role="navigation">
-    <div class="container">
+
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse"
@@ -58,31 +61,26 @@
              id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
                 <li><a href="{$app_url}">Home</a></li>
-                <li><a href="index.php?action=about">About</a></li>
-                <li><a href="index.php?action=blog">Blog</a></li>
-                <li><a href="index.php?action=booking">Rezerwacja</a></li>
-                <li><a href="index.php?action=contact">Contact</a></li>
+                <li><a href="?action=about">About</a></li>
+                <li><a href="?action=blog">Blog</a></li>
+                <li><a href="?action=booking">Rezerwacja</a></li>
+                <li><a href="?action=contact">Contact</a></li>
             </ul>
         </div>
         <!-- /.navbar-collapse -->
-    </div>
-    <!-- /.container -->
 </nav>
 
 <div class="container">
+    {block name=msg} {/block}
     {block name=top} {/block}
 </div>
 <!-- /.container -->
 
-<footer>
+<div id="footer">
     <div class="container">
-        <div class="row">
-            <div class="col-lg-12 text-center">
-                <p>Copyright &copy; Your Website 2014</p>
-            </div>
-        </div>
+        <p class="text-muted credit">Restauracja Hmm...</p>
     </div>
-</footer>
+</div>
 
 <!-- jQuery -->
 <script src="{$path}/js/jquery.js"></script>

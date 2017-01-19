@@ -1,9 +1,5 @@
 <?php
 require_once dirname(__FILE__) . '/../../init.php';
-// Po załadowaniu skryptu 'init.php' w całej aplikacji dostępne są obiekty:
-// konfiguracji, smarty, messages oraz bazy danych Medoo (Smarty i Medoo ładowane i tworzone w momencie pierwszego użycia)
-// za pomocą funkcji: getConf(), getSmarty(), getMessages() oraz getDB()
-// Jest również dostępna zmienna $action inicjowana z parametru żądania
 
 switch ($action) {
 //  HomeCtrl
@@ -43,7 +39,17 @@ switch ($action) {
         $ctrl = new BookingCtrl();
         $ctrl->registration();
         break;
-//	case 'personDelete' :
+    case 'regi' :
+        include_once getConf()->root_path . '\app\Controllers\BookingCtrl\BookingCtrl.class.php';
+        $ctrl = new BookingCtrl();
+        $ctrl->doRegistration();
+        break;
+    case 'book' :
+        include_once getConf()->root_path . '\app\Controllers\BookingCtrl\BookingCtrl.class.php';
+        $ctrl = new BookingCtrl();
+        $ctrl->book();
+        break;
+//	case 'personDeete' :
 //		include_once getConf()->root_path.'/app/person/edit/PersonEditCtrl.class.php';
 //		$ctrl = new PersonEditCtrl();
 //		$ctrl->processDelete();

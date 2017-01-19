@@ -26,9 +26,7 @@ class HomeCtrl
         $this->generateView('contact');
     }
 
-    /**
-     * @param $action
-     */
+
     public function generateView($action)
     {
         getSmarty()->display(getConf()->root_path . "\\app\\Views\\Home\\" . $action . '.html');

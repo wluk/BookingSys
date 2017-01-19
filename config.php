@@ -20,7 +20,7 @@ $conf->db_server = 'localhost';
 $conf->db_name = 'booking_db';
 $conf->db_user = 'booking_user';
 $conf->db_pass = 'ZL3qDdV3zECjFCVZ';
-$conf->db_charset = 'utf8';
+//$conf->db_charset = 'utf8';
 
 // ---- Database config - optional values
 $conf->db_port = '3306';

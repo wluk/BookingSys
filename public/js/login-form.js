@@ -29,6 +29,7 @@ if (typeof jQuery === 'undefined') {
 
     // Form Submission
     $("#login-form").submit(function () {
+        form.submit();
         remove_loading($(this));
 
         if (options['useAJAX'] == true) {

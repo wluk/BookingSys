@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.30, created on 2017-01-19 21:27:18
+/* Smarty version 3.1.30, created on 2017-01-19 22:01:26
   from "C:\xampp\htdocs\Booking\app\Views\Home\contact.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_588121260b29a7_66873078',
+  'unifunc' => 'content_58812926c6eee3_77745335',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,19 +20,19 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_588121260b29a7_66873078 (Smarty_Internal_Template $_smarty_tpl) {
+function content_58812926c6eee3_77745335 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_94505881212609f8f3_87911855', 'top');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1629858812926c56d49_18793002', 'top');
 $_smarty_tpl->inheritance->endChild();
 $_smarty_tpl->_subTemplateRender(($_smarty_tpl->tpl_vars['conf']->value->root_path).("\app\Views\main.html"), $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 2, true);
 }
 /* {block 'top'} */
-class Block_94505881212609f8f3_87911855 extends Smarty_Internal_Block
+class Block_1629858812926c56d49_18793002 extends Smarty_Internal_Block
 {
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>

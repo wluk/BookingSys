@@ -1,5 +1,6 @@
 <?php
 require_once dirname(__FILE__) . '/Config.class.php';
+
 $conf = new Config();
 require_once dirname(__FILE__) . '/config.php'; //set configuration
 
@@ -19,12 +20,11 @@ function getMessages()
     return $msgs;
 }
 
-//Prepare for Smarty, create once - only when needed
 $smarty = null;
 function getSmarty()
 {
     global $smarty;
-    if (!isset($smarty)) { //Create smarty and assign configuration and messages
+    if (!isset($smarty)) {
         include_once getConf()->root_path . '/lib/smarty/Smarty.class.php';
         $smarty = new Smarty();
 
@@ -37,7 +37,6 @@ function getSmarty()
     return $smarty;
 }
 
-//Prepare for Database, load Medoo library and create connection once - only when needed
 $db = null;
 function getDB()
 {
@@ -51,19 +50,15 @@ function getDB()
             'database_name' => &$conf->db_name,
             'username' => &$conf->db_user,
             'password' => &$conf->db_pass,
-            'charset' => &$conf->db_charset,
             'port' => &$conf->db_port,
-            'prefix' => &$conf->db_prefix,
             'option' => &$conf->db_option
         ]);
     }
     return $db;
 }
 
-//Load helper functions
+
 require_once getConf()->root_path . '/lib/helper_functions.php';
-//Get action to perform from request
 $action = getFromRequest(getConf()->action_param);
 
-session_start();
 ?>

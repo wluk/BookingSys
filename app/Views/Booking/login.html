@@ -1,5 +1,7 @@
 {extends file=$conf->root_path|cat:"\app\Views\main.html"}
-
+<?php
+	session_start();
+?>
 {block name=head}
 <!-- All the files that are required -->
 <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
@@ -12,47 +14,24 @@
 {block name=top}
 <div class="row">
     <div class="box">
-        <form action="{$conf->action_url}login" method="post">
-            <legend>Logowanie do systemu</legend>
-            <fieldset>
-                <div class="pure-control-group">
-                    <label for="id_login">login: </label>
-                    <input id="id_login" type="text" name="login"/>
-                </div>
-                <div class="pure-control-group">
-                    <label for="id_pass">pass: </label>
-                    <input id="id_pass" type="password" name="pass"/><br/>
-                </div>
-                <div class="pure-controls">
-                    <input type="submit" value="zaloguj" class="pure-button pure-button-primary"/>
-                </div>
-            </fieldset>
-        </form>
-    </div>
-</div>
-
-<a href="index.php?action=reg">Rejestracja</a>
-
-<div class="row">
-    <div class="box">
         <!-- Where all the magic happens -->
         <!-- LOGIN FORM -->
         <div class="text-center" style="padding:50px 0">
             <div class="logo">Logowanie</div>
             <!-- Main Form -->
             <div class="login-form-1">
-                <form id="login-form" class="text-left">
+                <form id="login-form" class="text-left" method="post" action="{$conf->action_url}login">
                     <div class="login-form-main-message"></div>
                     <div class="main-login-form">
                         <div class="login-group">
                             <div class="form-group">
                                 <label for="lg_username" class="sr-only">Login</label>
-                                <input type="text" class="form-control" id="lg_username" name="lg_username"
+                                <input type="text" class="form-control" id="lg_username" name="login"
                                        placeholder="login">
                             </div>
                             <div class="form-group">
                                 <label for="lg_password" class="sr-only">Hasło</label>
-                                <input type="password" class="form-control" id="lg_password" name="lg_password"
+                                <input type="password" class="form-control" id="lg_password" name="pass"
                                        placeholder="hasło">
                             </div>
                             <div class="form-group login-group-checkbox">
@@ -64,7 +43,7 @@
                     </div>
                     <div class="etc-login-form">
                         <!--<p>forgot your password? <a href="#">click here</a></p>-->
-                        <p>jesteś tu pierwszy raz? <br><a href="#">utwórz konto</a></p>
+                        <p>jesteś tu pierwszy raz? <br><a href="?action=reg">utwórz konto</a></p>
                     </div>
                 </form>
             </div>
