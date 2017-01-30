@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2017-01-19 22:04:45
+/* Smarty version 3.1.30, created on 2017-01-22 15:34:43
   from "C:\xampp\htdocs\Booking\app\Views\Booking\registration.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_588129edc9ff58_13283537',
+  'unifunc' => 'content_5884c303286b71_29926672',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '4a1663eb188fe3a4d7c18088b297c1a06864f99e' => 
     array (
       0 => 'C:\\xampp\\htdocs\\Booking\\app\\Views\\Booking\\registration.html',
-      1 => 1484859883,
+      1 => 1485095544,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_588129edc9ff58_13283537 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5884c303286b71_29926672 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
@@ -28,17 +28,17 @@ $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 <?php echo '<?php
 	';?>session_start();
 <?php echo '?>';
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_28219588129edb1cef4_32678530', 'head');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_153655884c3031ed5d3_62486273', 'head');
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_6488588129edc80ad6_07684156', 'top');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_174985884c3032735a7_24334801', 'top');
 $_smarty_tpl->inheritance->endChild();
 $_smarty_tpl->_subTemplateRender(($_smarty_tpl->tpl_vars['conf']->value->root_path).("\app\Views\main.html"), $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 2, true);
 }
 /* {block 'head'} */
-class Block_28219588129edb1cef4_32678530 extends Smarty_Internal_Block
+class Block_153655884c3031ed5d3_62486273 extends Smarty_Internal_Block
 {
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
@@ -55,7 +55,7 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 }
 /* {/block 'head'} */
 /* {block 'top'} */
-class Block_6488588129edc80ad6_07684156 extends Smarty_Internal_Block
+class Block_174985884c3032735a7_24334801 extends Smarty_Internal_Block
 {
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
@@ -67,54 +67,51 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
             <div class="logo">register</div>
             <!-- Main Form -->
             <div class="login-form-1">
-                <form id="register-form" class="text-left">
+                <!--id="register-form"-->
+                <form class="text-left" method="post" action="<?php echo $_smarty_tpl->tpl_vars['conf']->value->action_url;?>
+regi">
                     <div class="login-form-main-message"></div>
                     <div class="main-login-form">
                         <div class="login-group">
                             <div class="form-group">
-                                <label for="reg_username" class="sr-only">Email address</label>
-                                <input type="text" class="form-control" id="reg_username" name="reg_username"
-                                       placeholder="username">
-                            </div>
-                            <div class="form-group">
-                                <label for="reg_password" class="sr-only">Password</label>
-                                <input type="password" class="form-control" id="reg_password" name="reg_password"
-                                       placeholder="password">
-                            </div>
-                            <div class="form-group">
-                                <label for="reg_password_confirm" class="sr-only">Password Confirm</label>
-                                <input type="password" class="form-control" id="reg_password_confirm"
-                                       name="reg_password_confirm" placeholder="confirm password">
-                            </div>
-
-                            <div class="form-group">
                                 <label for="reg_email" class="sr-only">Email</label>
-                                <input type="text" class="form-control" id="reg_email" name="reg_email"
-                                       placeholder="email">
+                                <input type="text" class="form-control" id="reg_email" name="email"
+                                       placeholder="e-mail">
+                            </div>
+                            <div class="form-group">
+                                <label for="reg_password" class="sr-only">Hasło</label>
+                                <input type="password" class="form-control" id="reg_password"
+                                       name="VRegistration['pass1']" placeholder="hasło">
+                            </div>
+                            <div class="form-group">
+                                <label for="reg_password_confirm" class="sr-only">Powtórz hasło</label>
+                                <input type="password" class="form-control" id="reg_password_confirm"
+                                       name="VRegistration['pass2']" placeholder="powtórz hasło">
+                            </div>
+                            <div class="form-group">
+                                <label for="reg_username" class="sr-only">Adres email</label>
+                                <input type="text" class="form-control" id="reg_username" name="VRegistration['name']"
+                                       placeholder="imię">
                             </div>
                             <div class="form-group">
                                 <label for="reg_fullname" class="sr-only">Full Name</label>
-                                <input type="text" class="form-control" id="reg_fullname" name="reg_fullname"
-                                       placeholder="full name">
+                                <input type="text" class="form-control" id="reg_fullname"
+                                       name="VRegistration['surname']" placeholder="nazwisko">
                             </div>
-
-                            <div class="form-group login-group-checkbox">
-                                <input type="radio" class="" name="reg_gender" id="male" placeholder="username">
-                                <label for="male">male</label>
-
-                                <input type="radio" class="" name="reg_gender" id="female" placeholder="username">
-                                <label for="female">female</label>
+                            <div class="form-group">
+                                <label for="reg_fullname" class="sr-only">Full Name</label>
+                                <input type="tel" class="form-control" id="reg_phone" name="VRegistration['phone']"
+                                       placeholder="telefon">
                             </div>
-
                             <div class="form-group login-group-checkbox">
                                 <input type="checkbox" class="" id="reg_agree" name="reg_agree">
-                                <label for="reg_agree">i agree with <a href="#">terms</a></label>
+                                <label for="reg_agree">wyrażam zgodę na <a href="#">regulamin</a></label>
                             </div>
                         </div>
                         <button type="submit" class="login-button"><i class="fa fa-chevron-right"></i></button>
                     </div>
                     <div class="etc-login-form">
-                        <p>posiadasz konto <a href="#">zaloguj się</a></p>
+                        <p>posiadasz konto? <br><a href="?action=booking">zaloguj się</a></p>
                     </div>
                 </form>
             </div>
@@ -123,31 +120,31 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 
         <!--&lt;!&ndash; FORGOT PASSWORD FORM &ndash;&gt;-->
         <!--<div class="text-center" style="padding:50px 0">-->
-            <!--<div class="logo">forgot password</div>-->
-            <!--&lt;!&ndash; Main Form &ndash;&gt;-->
-            <!--<div class="login-form-1">-->
-                <!--<form id="forgot-password-form" class="text-left">-->
-                    <!--<div class="etc-login-form">-->
-                        <!--<p>When you fill in your registered email address, you will be sent instructions on how to reset-->
-                            <!--your password.</p>-->
-                    <!--</div>-->
-                    <!--<div class="login-form-main-message"></div>-->
-                    <!--<div class="main-login-form">-->
-                        <!--<div class="login-group">-->
-                            <!--<div class="form-group">-->
-                                <!--<label for="fp_email" class="sr-only">Email address</label>-->
-                                <!--<input type="text" class="form-control" id="fp_email" name="fp_email"-->
-                                       <!--placeholder="email address">-->
-                            <!--</div>-->
-                        <!--</div>-->
-                        <!--<button type="submit" class="login-button"><i class="fa fa-chevron-right"></i></button>-->
-                    <!--</div>-->
-                    <!--<div class="etc-login-form">-->
-                        <!--<p>already have an account? <a href="#">login here</a></p>-->
-                        <!--<p>new user? <a href="#">create new account</a></p>-->
-                    <!--</div>-->
-                <!--</form>-->
-            <!--</div>-->
+        <!--<div class="logo">forgot password</div>-->
+        <!--&lt;!&ndash; Main Form &ndash;&gt;-->
+        <!--<div class="login-form-1">-->
+        <!--<form id="forgot-password-form" class="text-left">-->
+        <!--<div class="etc-login-form">-->
+        <!--<p>When you fill in your registered email address, you will be sent instructions on how to reset-->
+        <!--your password.</p>-->
+        <!--</div>-->
+        <!--<div class="login-form-main-message"></div>-->
+        <!--<div class="main-login-form">-->
+        <!--<div class="login-group">-->
+        <!--<div class="form-group">-->
+        <!--<label for="fp_email" class="sr-only">Email address</label>-->
+        <!--<input type="text" class="form-control" id="fp_email" name="fp_email"-->
+        <!--placeholder="email address">-->
+        <!--</div>-->
+        <!--</div>-->
+        <!--<button type="submit" class="login-button"><i class="fa fa-chevron-right"></i></button>-->
+        <!--</div>-->
+        <!--<div class="etc-login-form">-->
+        <!--<p>already have an account? <a href="#">login here</a></p>-->
+        <!--<p>new user? <a href="#">create new account</a></p>-->
+        <!--</div>-->
+        <!--</form>-->
+        <!--</div>-->
         <!--&lt;!&ndash; end:Main Form &ndash;&gt;-->
     </div>
     <div class="clearfix"></div>

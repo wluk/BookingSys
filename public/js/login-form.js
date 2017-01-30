@@ -56,7 +56,7 @@ if (typeof jQuery === 'undefined') {
             reg_password_confirm: {
                 required: true,
                 minlength: 5,
-                equalTo: "#register-form [name=reg_password]"
+                equalTo: "#register-form [name=VRegistration['pass1']]"
             },
             reg_email: {
                 required: true,
@@ -129,6 +129,7 @@ if (typeof jQuery === 'undefined') {
     function form_success($form) {
         $form.find('[type=submit]').addClass('success').html(options['btn-success']);
         $form.find('.login-form-main-message').addClass('show success').html(options['msg-success']);
+        $form.submit();
     }
 
     function form_failed($form) {

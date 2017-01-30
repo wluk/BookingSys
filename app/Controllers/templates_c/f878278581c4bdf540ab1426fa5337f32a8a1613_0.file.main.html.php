@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2017-01-19 21:53:06
+/* Smarty version 3.1.30, created on 2017-01-22 13:55:59
   from "C:\xampp\htdocs\Booking\app\Views\main.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_58812732626054_44282996',
+  'unifunc' => 'content_5884abdfb89a04_85612111',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'f878278581c4bdf540ab1426fa5337f32a8a1613' => 
     array (
       0 => 'C:\\xampp\\htdocs\\Booking\\app\\Views\\main.html',
-      1 => 1484859181,
+      1 => 1485089665,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_58812732626054_44282996 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5884abdfb89a04_85612111 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, false);
 ?>
@@ -56,7 +56,6 @@ $_smarty_tpl->inheritance->init($_smarty_tpl, false);
     <link
             href="https://fonts.googleapis.com/css?family=Josefin+Slab:100,300,400,600,700,100italic,300italic,400italic,600italic,700italic"
             rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="../../public/css/sticky-footer.css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -69,7 +68,7 @@ $_smarty_tpl->inheritance->init($_smarty_tpl, false);
 >
     <![endif]-->
     <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_31905881273248b011_93907648', 'head');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_27765884abdfabaad2_24696802', 'head');
 ?>
 
 </head>
@@ -110,11 +109,11 @@ $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_31905881273248b011
 
 <div class="container">
     <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_29303588127324da6b9_31656211', 'msg');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_77295884abdfb04145_40316523', 'msg');
 ?>
 
     <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_12004588127325ce8e2_84088861', 'top');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_309985884abdfb40800_20473095', 'top');
 ?>
 
 </div>
@@ -150,7 +149,7 @@ $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_12004588127325ce8e
 </html>
 </html><?php }
 /* {block 'head'} */
-class Block_31905881273248b011_93907648 extends Smarty_Internal_Block
+class Block_27765884abdfabaad2_24696802 extends Smarty_Internal_Block
 {
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
@@ -159,7 +158,7 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 }
 /* {/block 'head'} */
 /* {block 'msg'} */
-class Block_29303588127324da6b9_31656211 extends Smarty_Internal_Block
+class Block_77295884abdfb04145_40316523 extends Smarty_Internal_Block
 {
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
@@ -168,7 +167,7 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 }
 /* {/block 'msg'} */
 /* {block 'top'} */
-class Block_12004588127325ce8e2_84088861 extends Smarty_Internal_Block
+class Block_309985884abdfb40800_20473095 extends Smarty_Internal_Block
 {
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>

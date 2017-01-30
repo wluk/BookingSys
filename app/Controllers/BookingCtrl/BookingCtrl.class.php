@@ -6,6 +6,7 @@ class BookingCtrl
     private $login;
     private $pass;
     private $msg;
+    private $model;
 
     public function getLoginParams()
     {
@@ -15,10 +16,15 @@ class BookingCtrl
 
     public function getRegParams()
     {
-        $this->login = $_REQUEST ['nickname'];
-        $this->pass = $_REQUEST ['email'];
-        $this->login = $_REQUEST ['p1'];
-        $this->pass = $_REQUEST ['p2'];
+        $user = new VRegistration();
+        $user->email = $_REQUEST["email"];
+        $user->pass1 = $_REQUEST["pass1"];
+        $user->pass2 = $_REQUEST["pass2"];
+        $user->name = $_REQUEST["name"];
+        $user->surname = $_REQUEST["surname"];
+        $user->phone = $_REQUEST["phone"];
+
+        $this->model = $user;
     }
 
     public function validate()
@@ -107,38 +113,35 @@ class BookingCtrl
     public
     function doRegistration()
     {
-        $model = (object)$_POST['VRegistration'];
-        if ($this->validFormReg($model)) {
-            //insert
-            $pass_hash = password_hash($model->pass1, PASSWORD_DEFAULT);
-            $_SESSION['hash'] = $pass_hash;
-
-            getDB()->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            getDB()->insert("user", [
-                "Login" => $model->nickname,
-                "Password" => $pass_hash
+        $this->getRegParams();
+        if ($this->validFormReg()) {
+            $pass_hash = password_hash($this->model->pass1, PASSWORD_DEFAULT);
+            $xyz = getDB()->insert("user", [
+                "LOGIN" => $this->model->email,
+                "PASSWORD" => $pass_hash,
+                "NAME" => $this->model->name,
+                "SURNAME" => $this->model->surname,
+                "PHONE" => $this->model->phone
             ]);
 
             $this->generateView('login');
-            //exit();
         } else {
             $this->msg = "Błąd";
             $this->generateView('registration');
         }
-
-
     }
 
     private
-    function validFormReg($model)
+    function validFormReg()
     {
-        if (!isset($model)) return false;
-        if (!isset($model->nickname) || strlen($model->nickname) == 0) return false;
-        if (!isset($model->email) || strlen($model->email) == 0) return false;
-        if (!isset($model->pass1) || strlen($model->pass1) == 0) return false;
-        if (!isset($model->pass2) || strlen($model->pass1) == 0) return false;
-        if (!isset($model->kom) || strlen($model->kom) == 0) return false;
-        if ($model->pass1 != $model->pass2) return false;
+        if (!isset($this->model)) return false;
+        if (!isset($this->model->email) || strlen($this->model->email) == 0) return false;
+        if (!isset($this->model->pass1) || strlen($this->model->pass1) == 0) return false;
+        if (!isset($this->model->pass2) || strlen($this->model->pass1) == 0) return false;
+        if ($this->model->pass1 != $this->model->pass2) return false;
+        if (!isset($this->model->name) || strlen($this->model->name) == 0) return false;
+        if (!isset($this->model->surname) || strlen($this->model->surname) == 0) return false;
+        if (!isset($this->model->phone) || strlen($this->model->phone) == 0) return false;
 
         return true;
 
