@@ -1,98 +1,206 @@
 <!DOCTYPE html>
-<html lang="pl">
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="pl">
+<!--<![endif]-->
 
 <head>
-
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>SILKA</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Restauracja Hmm...">
-    <meta name="author" content="Restauracja Hmm...">
-    <link rel="icon" href="{$path}/icon.ico">
+    <meta name="description" content="Fitness center" />
+    <meta name="keywords" content="silka fitness sport" />
+    <meta name="author" content="wluk" />
 
-    <title>Restauracja Hmm...</title>
+    <!-- 
+	//////////////////////////////////////////////////////
 
-    <!-- Bootstrap Core CSS -->
-    <link href="{$path}/css/bootstrap.min.css" rel="stylesheet">
+	FREE HTML5 TEMPLATE 
+	DESIGNED & DEVELOPED by FREEHTML5.CO
+		
+	Website: 		http://freehtml5.co/
+	Email: 			info@freehtml5.co
+	Twitter: 		http://twitter.com/fh5co
+	Facebook: 		https://www.facebook.com/fh5co
 
-    <!-- Custom CSS -->
-    <link href="{$path}/css/business-casual.css" rel="stylesheet">
-    <link href="{$path}/css/sticky-footer.css" rel="stylesheet">
+	//////////////////////////////////////////////////////
+	 -->
 
-    <!-- Fonts -->
-    <link
-            href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800"
-            rel="stylesheet" type="text/css">
-    <link
-            href="https://fonts.googleapis.com/css?family=Josefin+Slab:100,300,400,600,700,100italic,300italic,400italic,600italic,700italic"
-            rel="stylesheet" type="text/css">
+    <!-- Facebook and Twitter integration -->
+    <meta property="og:title" content="" />
+    <meta property="og:image" content="" />
+    <meta property="og:url" content="" />
+    <meta property="og:site_name" content="" />
+    <meta property="og:description" content="" />
+    <meta name="twitter:title" content="" />
+    <meta name="twitter:image" content="" />
+    <meta name="twitter:url" content="" />
+    <meta name="twitter:card" content="" />
 
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <link rel="shortcut icon" href="{$path}/icon.ico">
+
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700,900' rel='stylesheet' type='text/css'>
+
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="{$path}/css/animate.css">
+    <!-- Icomoon Icon Fonts-->
+    <link rel="stylesheet" href="{$path}/css/icomoon.css">
+    <!-- Bootstrap  -->
+    <link rel="stylesheet" href="{$path}/css/bootstrap.css">
+    <!-- Superfish -->
+    <link rel="stylesheet" href="{$path}/css/superfish.css">
+
+    <link rel="stylesheet" href="{$path}/css/style.css">
+
+
+    <!-- Modernizr JS -->
+    <script src="{$path}/js/modernizr-2.6.2.min.js"></script>
+    <!-- FOR IE9 below -->
     <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
+	<script src="{$path}/js/respond.min.js"></script>
+	<![endif]-->
+
     {block name=head} {/block}
 </head>
+
 <body>
-<div class="brand">Restauracja Hmm...</div>
-<div class="address-bar">3481 Melrose Place | Beverly Hills, CA
-    90210 | 123.456.7890
-</div>
+    <div id="fh5co-wrapper">
+        <div id="fh5co-page">
+            <div id="fh5co-header">
+                <header id="fh5co-header-section">
+                    <div class="container">
+                        <div class="nav-header">
+                            <a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle"><i></i></a>
+                            <h1 id="fh5co-logo"><a href="{$app_url}">SILKA</a></h1>
+                            <!-- START #fh5co-menu-wrap -->
+                            <nav id="fh5co-menu-wrap" role="navigation">
+                                <ul class="sf-menu" id="fh5co-primary-menu">
+                                    <li class="active">
+                                        <a href="{$app_url}">GŁÓWNA</a>
+                                    </li>
+                                    <li>
+                                        <a href="?action=classes" class="fh5co-sub-ddown">Zajecia</a>
+                                        <ul class="fh5co-sub-menu">
+                                            <li><a href="#">Body</a></li>
+                                            <li><a href="#">Yoga</a></li>
+                                            <li><a href="#">Cycling</a></li>
+                                            <li><a href="#">Boxing</a></li>
+                                            <li><a href="#">Swimming</a></li>
+                                            <li><a href="#">Massage</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="?action=schedule">Harmonogrma</a>
+                                    </li>
+                                    <li><a href="?action=trainer">Trenerzy</a></li>
+                                    <li><a href="?action=about">O nas</a></li>
+                                    <li><a href="?action=contact">Kontakt</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </header>
+            </div>
+            <!-- end:fh5co-header -->
+            {block name=hero} {/block}
 
-<!-- Navigation -->
-<nav class="navbar navbar-default" role="navigation">
 
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse"
-                    data-target="#bs-example-navbar-collapse-1">
-                <span class="sr-only">Toggle navigation</span> <span
-                    class="icon-bar"></span> <span class="icon-bar"></span> <span
-                    class="icon-bar"></span>
-            </button>
-            <!-- navbar-brand is hidden on larger screens, but visible when the menu is collapsed -->
-            <a class="navbar-brand" href="index.html">Business Casual</a>
+            <div class="container">
+                {block name=msg} {/block} {block name=top} {/block}
+            </div>
+
+            <!-- fh5co-blog-section -->
+            <footer>
+                <div id="footer">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-4 animate-box">
+                                <h3 class="section-title">O nas</h3>
+                                <p>Klub SILKA wyposażona jest w nowoczesne, wysokiej jakości urządzenia
+                                    do ćwiczeń siłowych oraz cardio. Pozwalają one na przeprowadzenie pełnego treningu
+                                    wszystkich partii mięśniowych. Dla naszych Gości przygotowaliśmy specjalną ofertę
+                                    cenową karnetów oraz wejść jednorazowych.</p>
+                            </div>
+
+                            <div class="col-md-4 animate-box">
+                                <h3 class="section-title">Nasz adres</h3>
+                                <ul class="contact-info">
+                                    <li><i class="icon-map-marker"></i>198 West 21th Street, Suite 721 New York NY 10016</li>
+                                    <li><i class="icon-phone"></i>+ 1235 2355 98</li>
+                                    <li><i class="icon-envelope"></i><a href="#">info@silka.com</a></li>
+                                    <li><i class="icon-globe2"></i><a href="www.silka.com">www.silka.com</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-md-4 animate-box">
+                                <h3 class="section-title">Napisz do nas</h3>
+                                <form class="contact-form">
+                                    <div class="form-group">
+                                        <label for="name" class="sr-only">Imie</label>
+                                        <input type="name" class="form-control" id="name" placeholder="Imie">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="email" class="sr-only">E-mail</label>
+                                        <input type="email" class="form-control" id="email" placeholder="E-mail">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="message" class="sr-only">Tekst</label>
+                                        <textarea class="form-control" id="message" rows="7" placeholder="Tekst"></textarea>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="submit" id="btn-submit" class="btn btn-send-message btn-md" value="Wyślij wiadomość">
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="row copy-right">
+                            <div class="col-md-6 col-md-offset-3 text-center">
+                                <p class="fh5co-social-icons">
+                                    <a href="#"><i class="icon-twitter2"></i></a>
+                                    <a href="#"><i class="icon-facebook2"></i></a>
+                                    <a href="#"><i class="icon-instagram"></i></a>
+                                    <a href="#"><i class="icon-dribbble2"></i></a>
+                                    <a href="#"><i class="icon-youtube"></i></a>
+                                </p>
+                                <p>Copyright 2016 Free Html5 <a href="#">Fitness</a>. All Rights Reserved. <br>Made with
+                                    <i class="icon-heart3"></i> by <a href="http://freehtml5.co/" target="_blank">Freehtml5.co</a>                                    / Demo Images:
+                                    <a href="https://unsplash.com/" target="_blank">Unsplash</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+
+
         </div>
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse"
-             id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav">
-                <li><a href="{$app_url}">Home</a></li>
-                <li><a href="?action=about">About</a></li>
-                <li><a href="?action=blog">Blog</a></li>
-                <li><a href="?action=booking">Rezerwacja</a></li>
-                <li><a href="?action=contact">Contact</a></li>
-            </ul>
-        </div>
-        <!-- /.navbar-collapse -->
-</nav>
+        <!-- END fh5co-page -->
 
-<div class="container">
-    {block name=msg} {/block}
-    {block name=top} {/block}
-</div>
-<!-- /.container -->
-
-<div id="footer">
-    <div class="container">
-        <p class="text-muted credit">Restauracja Hmm...</p>
     </div>
-</div>
+    <!-- END fh5co-wrapper -->
 
-<!-- jQuery -->
-<script src="{$path}/js/jquery.js"></script>
+    <!-- jQuery -->
 
-<!-- Bootstrap Core JavaScript -->
-<script src="{$path}/js/bootstrap.min.js"></script>
 
-<!-- Script to Activate the Carousel -->
-<script>
-    $('.carousel').carousel({
-        interval: 5000 //changes the speed
-    })
-</script>
+    <script src="{$path}/js/jquery.min.js"></script>
+    <!-- jQuery Easing -->
+    <script src="{$path}/js/jquery.easing.1.3.js"></script>
+    <!-- Bootstrap -->
+    <script src="{$path}/js/bootstrap.min.js"></script>
+    <!-- Waypoints -->
+    <script src="{$path}/js/jquery.waypoints.min.js"></script>
+    <!-- Stellar -->
+    <script src="{$path}/js/jquery.stellar.min.js"></script>
+    <!-- Superfish -->
+    <script src="{$path}/js/hoverIntent.js"></script>
+    <script src="{$path}/js/superfish.js"></script>
+
+    <!-- Main JS (Do not remove) -->
+    <script src="{$path}/js/main.js"></script>
+
+    {block name=script} {/block}
 </body>
-</html>
+
 </html>

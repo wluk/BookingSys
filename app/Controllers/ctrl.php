@@ -13,15 +13,25 @@ switch ($action) {
         $ctrl = new HomeCtrl();
         $ctrl->About();
         break;
-    case 'blog' :
+    case 'classes' :
         include_once getConf()->root_path . '\app\Controllers\HomeCtrl\HomeCtrl.class.php';
         $ctrl = new HomeCtrl();
-        $ctrl->Blog();
+        $ctrl->Classes();
         break;
     case 'contact' :
         include_once getConf()->root_path . '\app\Controllers\HomeCtrl\HomeCtrl.class.php';
         $ctrl = new HomeCtrl();
         $ctrl->Contact();
+        break;
+    case 'schedule' :
+        include_once getConf()->root_path . '\app\Controllers\HomeCtrl\HomeCtrl.class.php';
+        $ctrl = new HomeCtrl();
+        $ctrl->Schedule();
+        break;
+    case 'trainer' :
+        include_once getConf()->root_path . '\app\Controllers\HomeCtrl\HomeCtrl.class.php';
+        $ctrl = new HomeCtrl();
+        $ctrl->Trainer();
         break;
 //	BookingCtrl
     case 'booking' :

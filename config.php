@@ -1,8 +1,8 @@
 <?php
 // ---- Main webapp configuration
-$conf->server_name = 'localhost:8080'; // server address and port
+$conf->server_name = 'localhost:80'; // server address and port
 $conf->protocol = 'http';              // http or https
-$conf->app_root = '/Booking';        // project folder - relative to server apps folder
+$conf->app_root = '/silka';        // project folder - relative to server apps folder
 $conf->action_param = 'action';        // action parameter name
 $conf->action_script = '/app/Controllers/ctrl.php'; // localisation of main action script
 
@@ -17,9 +17,9 @@ $conf->view_element_path = $conf->app_root.'/public';
 // ---- Database config - values required by Medoo
 $conf->db_type = 'mysql';
 $conf->db_server = 'localhost';
-$conf->db_name = 'booking_db';
-$conf->db_user = 'booking_user';
-$conf->db_pass = 'ZL3qDdV3zECjFCVZ';
+$conf->db_name = 'silka_db';
+$conf->db_user = 'silka_user';
+$conf->db_pass = 'XATbygDxLl1HOdOr';
 //$conf->db_charset = 'utf8';
 
 // ---- Database config - optional values

@@ -15,9 +15,9 @@ class HomeCtrl
     }
 
     //GET
-    public function Blog()
+    public function Classes()
     {
-        $this->generateView('blog');
+        $this->generateView('classes');
     }
 
     //GET
@@ -26,6 +26,17 @@ class HomeCtrl
         $this->generateView('contact');
     }
 
+    //GET
+    public function Schedule()
+    {
+        $this->generateView('schedule');
+    }
+
+    //GET
+    public function Trainer()
+    {
+        $this->generateView('trainer');
+    }
 
     public function generateView($action)
     {
