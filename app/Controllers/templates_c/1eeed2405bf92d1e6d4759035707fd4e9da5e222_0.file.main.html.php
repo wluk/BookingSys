@@ -1,3 +1,29 @@
+<?php
+/* Smarty version 3.1.30, created on 2017-04-06 23:59:00
+  from "C:\xampp\htdocs\silka\app\Views\main.html" */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '3.1.30',
+  'unifunc' => 'content_58e6ba24e40a70_01830197',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    '1eeed2405bf92d1e6d4759035707fd4e9da5e222' => 
+    array (
+      0 => 'C:\\xampp\\htdocs\\silka\\app\\Views\\main.html',
+      1 => 1491029501,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+  ),
+),false)) {
+function content_58e6ba24e40a70_01830197 (Smarty_Internal_Template $_smarty_tpl) {
+$_smarty_tpl->_loadInheritance();
+$_smarty_tpl->inheritance->init($_smarty_tpl, false);
+?>
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
@@ -41,30 +67,45 @@
     <meta name="twitter:card" content="" />
 
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-    <link rel="shortcut icon" href="{$path}/icon.ico">
+    <link rel="shortcut icon" href="<?php echo $_smarty_tpl->tpl_vars['path']->value;?>
+/icon.ico">
 
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700,900' rel='stylesheet' type='text/css'>
 
     <!-- Animate.css -->
-    <link rel="stylesheet" href="{$path}/css/animate.css">
+    <link rel="stylesheet" href="<?php echo $_smarty_tpl->tpl_vars['path']->value;?>
+/css/animate.css">
     <!-- Icomoon Icon Fonts-->
-    <link rel="stylesheet" href="{$path}/css/icomoon.css">
+    <link rel="stylesheet" href="<?php echo $_smarty_tpl->tpl_vars['path']->value;?>
+/css/icomoon.css">
     <!-- Bootstrap  -->
-    <link rel="stylesheet" href="{$path}/css/bootstrap.css">
+    <link rel="stylesheet" href="<?php echo $_smarty_tpl->tpl_vars['path']->value;?>
+/css/bootstrap.css">
     <!-- Superfish -->
-    <link rel="stylesheet" href="{$path}/css/superfish.css">
+    <link rel="stylesheet" href="<?php echo $_smarty_tpl->tpl_vars['path']->value;?>
+/css/superfish.css">
 
-    <link rel="stylesheet" href="{$path}/css/style.css">
+    <link rel="stylesheet" href="<?php echo $_smarty_tpl->tpl_vars['path']->value;?>
+/css/style.css">
 
 
     <!-- Modernizr JS -->
-    <script src="{$path}/js/modernizr-2.6.2.min.js"></script>
+    <?php echo '<script'; ?>
+ src="<?php echo $_smarty_tpl->tpl_vars['path']->value;?>
+/js/modernizr-2.6.2.min.js"><?php echo '</script'; ?>
+>
     <!-- FOR IE9 below -->
     <!--[if lt IE 9]>
-	<script src="{$path}/js/respond.min.js"></script>
+	<?php echo '<script'; ?>
+ src="<?php echo $_smarty_tpl->tpl_vars['path']->value;?>
+/js/respond.min.js"><?php echo '</script'; ?>
+>
 	<![endif]-->
 
-    {block name=head} {/block}
+    <?php 
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_152894678458e6ba24cbd071_74876593', 'head');
+?>
+
 </head>
 
 <body>
@@ -75,12 +116,14 @@
                     <div class="container">
                         <div class="nav-header">
                             <a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle"><i></i></a>
-                            <h1 id="fh5co-logo"><a href="{$app_url}">SILKA</a></h1>
+                            <h1 id="fh5co-logo"><a href="<?php echo $_smarty_tpl->tpl_vars['app_url']->value;?>
+">SILKA</a></h1>
                             <!-- START #fh5co-menu-wrap -->
                             <nav id="fh5co-menu-wrap" role="navigation">
                                 <ul class="sf-menu" id="fh5co-primary-menu">
                                     <li class="active">
-                                        <a href="{$app_url}">GŁÓWNA</a>
+                                        <a href="<?php echo $_smarty_tpl->tpl_vars['app_url']->value;?>
+">GŁÓWNA</a>
                                     </li>
                                     <!--<li>
                                         <a href="?action=classes" class="fh5co-sub-ddown">Zajecia</a>
@@ -105,11 +148,20 @@
                 </header>
             </div>
             <!-- end:fh5co-header -->
-            {block name=hero} {/block}
+            <?php 
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_198295932258e6ba24d0f869_54579285', 'hero');
+?>
+
 
 
             <div class="container">
-                {block name=msg} {/block} {block name=top} {/block}
+                <?php 
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_57713170658e6ba24d3e802_86646940', 'msg');
+?>
+ <?php 
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_172222548658e6ba24d6ce12_78858854', 'top');
+?>
+
             </div>
 
             <!-- fh5co-blog-section -->
@@ -182,23 +234,96 @@
     <!-- jQuery -->
 
 
-    <script src="{$path}/js/jquery.min.js"></script>
+    <?php echo '<script'; ?>
+ src="<?php echo $_smarty_tpl->tpl_vars['path']->value;?>
+/js/jquery.min.js"><?php echo '</script'; ?>
+>
     <!-- jQuery Easing -->
-    <script src="{$path}/js/jquery.easing.1.3.js"></script>
+    <?php echo '<script'; ?>
+ src="<?php echo $_smarty_tpl->tpl_vars['path']->value;?>
+/js/jquery.easing.1.3.js"><?php echo '</script'; ?>
+>
     <!-- Bootstrap -->
-    <script src="{$path}/js/bootstrap.min.js"></script>
+    <?php echo '<script'; ?>
+ src="<?php echo $_smarty_tpl->tpl_vars['path']->value;?>
+/js/bootstrap.min.js"><?php echo '</script'; ?>
+>
     <!-- Waypoints -->
-    <script src="{$path}/js/jquery.waypoints.min.js"></script>
+    <?php echo '<script'; ?>
+ src="<?php echo $_smarty_tpl->tpl_vars['path']->value;?>
+/js/jquery.waypoints.min.js"><?php echo '</script'; ?>
+>
     <!-- Stellar -->
-    <script src="{$path}/js/jquery.stellar.min.js"></script>
+    <?php echo '<script'; ?>
+ src="<?php echo $_smarty_tpl->tpl_vars['path']->value;?>
+/js/jquery.stellar.min.js"><?php echo '</script'; ?>
+>
     <!-- Superfish -->
-    <script src="{$path}/js/hoverIntent.js"></script>
-    <script src="{$path}/js/superfish.js"></script>
+    <?php echo '<script'; ?>
+ src="<?php echo $_smarty_tpl->tpl_vars['path']->value;?>
+/js/hoverIntent.js"><?php echo '</script'; ?>
+>
+    <?php echo '<script'; ?>
+ src="<?php echo $_smarty_tpl->tpl_vars['path']->value;?>
+/js/superfish.js"><?php echo '</script'; ?>
+>
 
     <!-- Main JS (Do not remove) -->
-    <script src="{$path}/js/main.js"></script>
+    <?php echo '<script'; ?>
+ src="<?php echo $_smarty_tpl->tpl_vars['path']->value;?>
+/js/main.js"><?php echo '</script'; ?>
+>
 
-    {block name=script} {/block}
+    <?php 
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_71451598258e6ba24e1dd58_26669195', 'script');
+?>
+
 </body>
 
-</html>
+</html><?php }
+/* {block 'head'} */
+class Block_152894678458e6ba24cbd071_74876593 extends Smarty_Internal_Block
+{
+public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
+?>
+ <?php
+}
+}
+/* {/block 'head'} */
+/* {block 'hero'} */
+class Block_198295932258e6ba24d0f869_54579285 extends Smarty_Internal_Block
+{
+public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
+?>
+ <?php
+}
+}
+/* {/block 'hero'} */
+/* {block 'msg'} */
+class Block_57713170658e6ba24d3e802_86646940 extends Smarty_Internal_Block
+{
+public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
+?>
+ <?php
+}
+}
+/* {/block 'msg'} */
+/* {block 'top'} */
+class Block_172222548658e6ba24d6ce12_78858854 extends Smarty_Internal_Block
+{
+public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
+?>
+ <?php
+}
+}
+/* {/block 'top'} */
+/* {block 'script'} */
+class Block_71451598258e6ba24e1dd58_26669195 extends Smarty_Internal_Block
+{
+public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
+?>
+ <?php
+}
+}
+/* {/block 'script'} */
+}

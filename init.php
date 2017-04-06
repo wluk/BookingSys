@@ -28,7 +28,7 @@ function getSmarty()
         include_once getConf()->root_path . '/lib/smarty/Smarty.class.php';
         $smarty = new Smarty();
 
-        $smarty->assign('company', 'Restauracja hmm...');
+        $smarty->assign('company', 'SILKA');
         $smarty->assign('conf', getConf());
         $smarty->assign('msgs', getMessages());
         $smarty->assign('app_url', getConf()->app_url);
@@ -60,5 +60,4 @@ function getDB()
 
 require_once getConf()->root_path . '/lib/helper_functions.php';
 $action = getFromRequest(getConf()->action_param);
-
 ?>

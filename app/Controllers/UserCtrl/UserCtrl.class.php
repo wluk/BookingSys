@@ -1,7 +1,7 @@
 <?php
 require_once getConf()->root_path . '/app/models/VRegistration.class.php';
 
-class BookingCtrl
+class UserCtrl
 {
     private $login;
     private $pass;
@@ -29,6 +29,7 @@ class BookingCtrl
 
     public function validate()
     {
+        session_start();
         // sprawdzenie, czy parametry zostały przekazane
         if (!(isset ($this->login) && isset ($this->pass))) {
             // sytuacja wystąpi kiedy np. kontroler zostanie wywołany bezpośrednio - nie z formularza
@@ -53,12 +54,10 @@ class BookingCtrl
             // sprawdzenie, czy dane logowania poprawne
             // (takie informacje najczęściej przechowuje się w bazie danych)
             if ($this->login == "admin" && $this->pass == "admin") {
-                session_start();
-                $user = new User($this->login, 'admin');
+                $user = new User($this->login, 'AdminCtrl');
                 $_SESSION['user_login'] = $user->login;
                 $_SESSION['user_role'] = $user->role;
             } else if ($this->login == "user" && $this->pass == "user") {
-                session_start();
                 $user = new User($this->login, 'user');
                 $_SESSION['user_login'] = $user->login;
                 $_SESSION['user_role'] = $user->role;
@@ -71,24 +70,36 @@ class BookingCtrl
     }
 
     //GET
+    public function LogOut()
+    {
+        session_start();
+        session_unset();
+        $this->generateHomeView('index');
+    }
+
+    //GET
     public function Login()
     {
+        session_start();
         $this->generateView('login');
     }
 
     //POST
     public function doLogin()
     {
+        session_start();
         $this->getLoginParams();
 
         $p_login = htmlentities($this->login, ENT_QUOTES, "UTF-8");
         $users = getDB()->select(
-            "user",
-            ["Login", "Password"],
+            "person",
+            ["ID", "Login", "Password"],
             ["Login" => $p_login]);
         foreach ($users as $user) {
             if (password_verify($this->pass, $user['Password'])) {
-                $this->generateView('book');
+                $_SESSION['user_login'] = $user['Login'];
+                $_SESSION['identifier'] = $user['ID'];
+                $this->book();
                 exit();
             }
         }
@@ -99,7 +110,33 @@ class BookingCtrl
     public
     function book()
     {
-        $this->generateView('book');
+        if (isset($_SESSION['user_login'])) {
+
+            $classes = getDB()->select("classes", [
+                //join
+                "[>]trainer" => ["ID_TRAINER" => "ID_TRAINER"],
+                "[>]registry" => ["ID_CLASSES" => "ID_CLASSES"]
+            ],
+                [
+                    //columns
+                    "classes.ID_CLASSES",
+                    "classes.DATE",
+                    "classes.TYPE",
+                    "trainer.NAME",
+                    "registry.ID_PERSON"
+                ],
+                [
+                    "ORDER" => ["classes.DATE"]
+                ]
+            );
+
+            $this->generateViewWithData('user', $classes);
+        }
+        else
+        {
+            $this->msg ='Jesteś nie zalogowany';
+            $this->generateView('login');
+        }
     }
 
 //GET
@@ -153,12 +190,27 @@ class BookingCtrl
         if (isset($this->msg)) {
             getSmarty()->assign('msg', $this->msg);
         }
-        getSmarty()->display(getConf()->root_path . "\\app\\Views\\Booking\\" . $action . '.html');
+        getSmarty()->display(getConf()->root_path . "\\app\\Views\\User\\" . $action . '.html');
+    }
+
+    public
+    function generateViewWithData($action, $returnData)
+    {
+        $this->msg = "Błąd";
+
+        if (isset($this->msg)) {
+            getSmarty()->assign('msg', $this->msg);
+        }
+
+        getSmarty()->assign('return', $returnData);
+        print_r($_SESSION);
+        getSmarty()->display(getConf()->root_path . "\\app\\Views\\User\\" . $action . '.html');
     }
 
     public
     function generateHomeView($action)
     {
+        print_r($_SESSION);
         getSmarty()->display(getConf()->root_path . "\\app\\Views\\Home\\" . $action . '.html');
     }
 }

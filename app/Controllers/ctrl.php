@@ -2,7 +2,7 @@
 require_once dirname(__FILE__) . '/../../init.php';
 
 switch ($action) {
-//  HomeCtrl
+    //  HomeCtrl
     default : // 'home'
         include_once getConf()->root_path . '\app\Controllers\HomeCtrl\HomeCtrl.class.php';
         $ctrl = new HomeCtrl();
@@ -33,36 +33,58 @@ switch ($action) {
         $ctrl = new HomeCtrl();
         $ctrl->Trainer();
         break;
-//	BookingCtrl
+    //	Rejestracja
     case 'booking' :
-        include_once getConf()->root_path . '\app\Controllers\BookingCtrl\BookingCtrl.class.php';
-        $ctrl = new BookingCtrl();
+        include_once getConf()->root_path . '\app\Controllers\UserCtrl\UserCtrl.class.php';
+        $ctrl = new UserCtrl();
         $ctrl->Login();
         break;
     case 'login' :
-        include_once getConf()->root_path . '\app\Controllers\BookingCtrl\BookingCtrl.class.php';
-        $ctrl = new BookingCtrl();
+        include_once getConf()->root_path . '\app\Controllers\UserCtrl\UserCtrl.class.php';
+        $ctrl = new UserCtrl();
         $ctrl->doLogin();
         break;
     case 'reg' :
-        include_once getConf()->root_path . '\app\Controllers\BookingCtrl\BookingCtrl.class.php';
-        $ctrl = new BookingCtrl();
+        include_once getConf()->root_path . '\app\Controllers\UserCtrl\UserCtrl.class.php';
+        $ctrl = new UserCtrl();
         $ctrl->registration();
         break;
     case 'regi' :
-        include_once getConf()->root_path . '\app\Controllers\BookingCtrl\BookingCtrl.class.php';
-        $ctrl = new BookingCtrl();
+        include_once getConf()->root_path . '\app\Controllers\UserCtrl\UserCtrl.class.php';
+        $ctrl = new UserCtrl();
         $ctrl->doRegistration();
         break;
     case 'book' :
-        include_once getConf()->root_path . '\app\Controllers\BookingCtrl\BookingCtrl.class.php';
-        $ctrl = new BookingCtrl();
+        include_once getConf()->root_path . '\app\Controllers\UserCtrl\UserCtrl.class.php';
+        $ctrl = new UserCtrl();
         $ctrl->book();
         break;
-//	case 'personDeete' :
-//		include_once getConf()->root_path.'/app/person/edit/PersonEditCtrl.class.php';
-//		$ctrl = new PersonEditCtrl();
-//		$ctrl->processDelete();
-//	break;
+    case 'statute' :
+        include_once getConf()->root_path . '\app\Controllers\UserCtrl\UserCtrl.class.php';
+        $ctrl = new UserCtrl();
+        $ctrl->registration();
+        break;
+    case 'logout' :
+        include_once getConf()->root_path . '\app\Controllers\UserCtrl\UserCtrl.class.php';
+        $ctrl = new UserCtrl();
+        $ctrl->LogOut();
+        break;
+        // Akcje
+    case 'join' :
+        include_once getConf()->root_path . '\app\Controllers\UserCtrl\ActionCtrl.class.php';
+        $ctrl = new ActionCtrl();
+        $ctrl->JoinClasses();
+        break;
+    //Admin
+    case 'person' :
+        include_once getConf()->root_path . '\app\Controllers\UserCtrl\AdminCtrl.class.php';
+        $ctrl = new AdminCtrl();
+        $ctrl->GetPersons();
+        break;
+    //	case 'personDeete' :
+    //		include_once getConf()->root_path.'/app/person/edit/PersonEditCtrl.class.php';
+    //		$ctrl = new PersonEditCtrl();
+    //		$ctrl->processDelete();
+    //	break;
 }
 ?>
