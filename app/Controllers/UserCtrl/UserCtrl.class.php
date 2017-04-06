@@ -116,7 +116,7 @@ class BookingCtrl
         $this->getRegParams();
         if ($this->validFormReg()) {
             $pass_hash = password_hash($this->model->pass1, PASSWORD_DEFAULT);
-            $xyz = getDB()->insert("user", [
+            $xyz = getDB()->insert("person", [
                 "LOGIN" => $this->model->email,
                 "PASSWORD" => $pass_hash,
                 "NAME" => $this->model->name,
