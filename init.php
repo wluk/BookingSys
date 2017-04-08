@@ -57,7 +57,6 @@ function getDB()
     return $db;
 }
 
-
 require_once getConf()->root_path . '/lib/helper_functions.php';
 $action = getFromRequest(getConf()->action_param);
 ?>

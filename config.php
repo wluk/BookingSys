@@ -4,7 +4,7 @@ $conf->server_name = 'localhost:80'; // server address and port
 $conf->protocol = 'http';              // http or https
 $conf->app_root = '/silka';        // project folder - relative to server apps folder
 $conf->action_param = 'action';        // action parameter name
-$conf->action_script = '/app/Controllers/ctrl.php'; // localisation of main action script
+$conf->action_script = '/app/MainCtrl.php'; // localisation of main action script
 
 // ---- Helpful values generated automatically
 $conf->root_path = dirname(__FILE__);
