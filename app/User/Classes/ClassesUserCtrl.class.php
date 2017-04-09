@@ -28,7 +28,7 @@ class ClassesUserCtrl
     //GET
     public function Search()
     {
-        $search = $_REQUEST['search'];
+        $search = htmlentities($_REQUEST['search'], ENT_QUOTES, "UTF-8");
         if (isset($search)) {
             $page = $_REQUEST['page'] ?: 1;
             $result_per_page = 5;
@@ -46,7 +46,7 @@ class ClassesUserCtrl
             $count = $count2[0]['ile'];
             $maxPage = ceil($count / $result_per_page);
 
-            $sql = "SELECT DISTINCT classes.ID_CLASSES, classes.DATE, classes.TYPE, classes.STATUS, trainer.NAME, registry.ID_PERSON FROM classes LEFT JOIN trainer ON classes.ID_TRAINER = trainer.ID_TRAINER LEFT JOIN registry ON classes.ID_CLASSES = registry.ID_CLASSES WHERE classes.TYPE like '" . $search . "' OR trainer.NAME like '" . $search . "' ORDER BY  classes.DATE,classes.ID_CLASSES LIMIT " . $starting_limit_number . " , " . $result_per_page;
+            $sql = "SELECT DISTINCT classes.ID_CLASSES, classes.DATE, classes.TYPE, classes.STATUS, trainer.NAME, registry.ID_PERSON FROM classes LEFT JOIN trainer ON classes.ID_TRAINER = trainer.ID_TRAINER LEFT JOIN registry ON classes.ID_CLASSES = registry.ID_CLASSES WHERE classes.STATUS = 0 AND classes.TYPE like '" . $search . "' OR trainer.NAME like '" . $search . "' ORDER BY  classes.DATE,classes.ID_CLASSES LIMIT " . $starting_limit_number . " , " . $result_per_page;
 
             $query = getDB()->pdo->query($sql);
             $classes = $query->fetchAll();
@@ -57,9 +57,13 @@ class ClassesUserCtrl
             getSmarty()->assign('page', $maxPage);
             getSmarty()->assign('return', $classes);
             getSmarty()->assign('currentPage', $page);
-
-            $_SESSION['search'] = $search;
-            $this->generateView('classes');
+            if (sizeof($classes) > 0) {
+                $_SESSION['search'] = $search;
+                $this->generateView('classes');
+            } else {
+                getMessages()->addInfo("Wyszukiwanie nie zwróciło wynikow");
+                $this->generateView('classes');
+            }
         } else {
             getMessages()->addInfo('Widok dostępny tylko dla zalogowanych');
             forwardTo('loginGet');
@@ -105,10 +109,32 @@ class ClassesUserCtrl
             $count = getDB()->count("classes");
             $maxPage = ceil($count / $result_per_page);
 
-            $sql = "SELECT DISTINCT classes.ID_CLASSES, classes.DATE, classes.TYPE, classes.STATUS, trainer.NAME, registry.ID_PERSON FROM classes LEFT JOIN trainer ON classes.ID_TRAINER = trainer.ID_TRAINER LEFT JOIN registry ON classes.ID_CLASSES = registry.ID_CLASSES ORDER BY  classes.DATE,classes.ID_CLASSES LIMIT " . $starting_limit_number . " , " . $result_per_page;
+//            $sql = "SELECT DISTINCT classes.ID_CLASSES, classes.DATE, classes.TYPE, classes.STATUS, trainer.NAME, registry.ID_PERSON FROM classes LEFT JOIN trainer ON classes.ID_TRAINER = trainer.ID_TRAINER LEFT JOIN registry ON classes.ID_CLASSES = registry.ID_CLASSES WHERE classes.STATUS = 0 ORDER BY  classes.DATE,classes.ID_CLASSES LIMIT " . $starting_limit_number . " , " . $result_per_page;
+            $sql = "SELECT DISTINCT classes.ID_CLASSES, classes.DATE, classes.TYPE, classes.STATUS, trainer.NAME, NULL as TU FROM classes LEFT JOIN trainer ON classes.ID_TRAINER = trainer.ID_TRAINER WHERE classes.STATUS = 0 ORDER BY  classes.DATE, classes.ID_CLASSES LIMIT " . $starting_limit_number . " , " . $result_per_page;
 
             $query = getDB()->pdo->query($sql);
             $classes = $query->fetchAll();
+
+            $zapisy = getDB()->select("registry", "*", ["ID_PERSON" => $_SESSION['identifier']]);
+
+            for ($i = 0; $i < count($classes); $i++) {
+                for ($j = 0; $j < count($zapisy); $j++) {
+                    if ($classes[$i]['ID_CLASSES'] == $zapisy[$j]['ID_CLASSES']) {
+                        $classes[$i]['TU'] = 1;
+                    } else {
+                        $classes[$i]['TU'] = 0;
+                    }
+                }
+            }
+
+            for ($i = 1; $i <= count($classes); $i++) {
+                if ($classes[$i - 1]['ID_CLASSES'] == $classes[$i]['ID_CLASSES'] && $classes[$i]['ID_PERSON'] == $_SESSION['identifier']) {
+                    unset($classes[$i - 1]);
+                }
+            }
+
+            //$classes = array_slice($classes, $starting_limit_number, $result_per_page);
+
             if (null != getDB()->error()[1]) { //jeśli istnieje kod błędu
                 getMessages()->addError("Wystąpił błąd podczas wczytywania rekordów" . getDB()->error()[2]);
             }
@@ -123,8 +149,9 @@ class ClassesUserCtrl
         }
     }
 
-    //GET
-    public function JoinClasses()
+//GET
+    public
+    function JoinClasses()
     {
         $this->getClassesIDParam();
         getDB()->insert("registry", [
@@ -137,8 +164,9 @@ class ClassesUserCtrl
         getMessages()->addInfo('Dołączyłeś do zajęć');
     }
 
-    //GET
-    public function LeaveClesses()
+//GET
+    public
+    function LeaveClesses()
     {
         $this->getClassesIDParam();
         getDB()->delete("registry", [
@@ -152,7 +180,8 @@ class ClassesUserCtrl
         getMessages()->addInfo('Wypisano z zajęć');
     }
 
-    public function generateView($action)
+    public
+    function generateView($action)
     {
         getSmarty()->display(getConf()->root_path . "\\app\\User\\Classes\\" . $action . '.html');
     }

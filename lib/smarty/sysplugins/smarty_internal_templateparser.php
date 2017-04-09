@@ -193,7 +193,7 @@ class Smarty_Internal_Templateparser
     public $block_nesting_level = 0;
 
     /**
-     * security object
+     * Security object
      *
      * @var Smarty_Security
      */
@@ -207,7 +207,7 @@ class Smarty_Internal_Templateparser
     public $template_prefix = array();
 
     /**
-     * security object
+     * Security object
      *
      * @var \Smarty_Internal_ParseTree[]
      */
@@ -2172,7 +2172,7 @@ class Smarty_Internal_Templateparser
             }
         } else {
             $this->compiler->trigger_template_error("static class '" . $this->yystack[ $this->yyidx + - 2 ]->minor .
-                                                    "' is undefined or not allowed by security setting");
+                                                    "' is undefined or not allowed by Security setting");
         }
     }
 

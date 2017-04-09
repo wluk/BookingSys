@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2017-04-09 09:03:59
+/* Smarty version 3.1.30, created on 2017-04-09 11:09:11
   from "C:\xampp\htdocs\silka\public\main.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_58e9dcdfbf6592_63366940',
+  'unifunc' => 'content_58e9fa37c346e5_53592446',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '961b449d6c5458e514d08f2b757a319aa28c388c' => 
     array (
       0 => 'C:\\xampp\\htdocs\\silka\\public\\main.html',
-      1 => 1491721407,
+      1 => 1491728947,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_58e9dcdfbf6592_63366940 (Smarty_Internal_Template $_smarty_tpl) {
+function content_58e9fa37c346e5_53592446 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, false);
 ?>
@@ -106,7 +106,7 @@ $_smarty_tpl->inheritance->init($_smarty_tpl, false);
     <![endif]-->
 
     <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_209473166858e9dcdf6860b8_13485321', 'head');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_18574985658e9fa3704c478_26529415', 'head');
 ?>
 
 </head>
@@ -119,14 +119,12 @@ $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_209473166858e9dcdf
                 <div class="container">
                     <div class="nav-header">
                         <a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle"><i></i></a>
-                        <h1 id="fh5co-logo"><a href="<?php echo $_smarty_tpl->tpl_vars['app_url']->value;?>
-">SILKA</a></h1>
+                        <h1 id="fh5co-logo"><a href="?action=home">SILKA</a></h1>
                         <!-- START #fh5co-menu-wrap -->
                         <nav id="fh5co-menu-wrap" role="navigation">
                             <ul class="sf-menu" id="fh5co-primary-menu">
                                 <li class="active">
-                                    <a href="<?php echo $_smarty_tpl->tpl_vars['app_url']->value;?>
-">GŁÓWNA</a>
+                                    <a href="?action=home">GŁÓWNA</a>
                                 </li>
                                 <!--<li>
                                     <a href="?action=classes" class="fh5co-sub-ddown">Zajecia</a>
@@ -162,7 +160,7 @@ $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_209473166858e9dcdf
         </div>
         <!-- end:fh5co-header -->
         <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_87576016858e9dcdf8e4822_42437978', 'hero');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_143552307958e9fa374ff5c9_10952988', 'hero');
 ?>
 
 
@@ -224,7 +222,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
         </div>
         <div class="container">
             <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_174727503558e9dcdfae8729_43352895', 'top');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_42801318358e9fa37a71158_18651071', 'top');
 ?>
 
             <br>
@@ -346,14 +344,14 @@ $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_174727503558e9dcdf
 >
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_100034619958e9dcdfbc4682_35536849', 'script');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_128807005758e9fa37bde307_28319257', 'script');
 ?>
 
 </body>
 
 </html><?php }
 /* {block 'head'} */
-class Block_209473166858e9dcdf6860b8_13485321 extends Smarty_Internal_Block
+class Block_18574985658e9fa3704c478_26529415 extends Smarty_Internal_Block
 {
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
@@ -362,7 +360,7 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 }
 /* {/block 'head'} */
 /* {block 'hero'} */
-class Block_87576016858e9dcdf8e4822_42437978 extends Smarty_Internal_Block
+class Block_143552307958e9fa374ff5c9_10952988 extends Smarty_Internal_Block
 {
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
@@ -373,7 +371,7 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 }
 /* {/block 'hero'} */
 /* {block 'top'} */
-class Block_174727503558e9dcdfae8729_43352895 extends Smarty_Internal_Block
+class Block_42801318358e9fa37a71158_18651071 extends Smarty_Internal_Block
 {
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
@@ -384,7 +382,7 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 }
 /* {/block 'top'} */
 /* {block 'script'} */
-class Block_100034619958e9dcdfbc4682_35536849 extends Smarty_Internal_Block
+class Block_128807005758e9fa37bde307_28319257 extends Smarty_Internal_Block
 {
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>

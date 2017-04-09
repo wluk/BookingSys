@@ -85,7 +85,7 @@ class SingUserCtrl
                     $_SESSION['user_role'] = $user['ROLE'];
                     $_SESSION['isLoged'] = true;
 
-                    if (isset($user['Role']) && $user['Role'] == 'admin') {
+                    if (isset($user['ROLE']) && $user['ROLE'] == 'admin') {
                         redirectTo('showClassesAP');
                     } else {
                         redirectTo('showClasses');

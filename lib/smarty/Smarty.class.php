@@ -461,7 +461,7 @@ class Smarty extends Smarty_Internal_TemplateBase
     public $right_delimiter = "}";
 
     /**#@+
-     * security
+     * Security
      */
     /**
      * class name
@@ -473,7 +473,7 @@ class Smarty extends Smarty_Internal_TemplateBase
     public $security_class = 'Smarty_Security';
 
     /**
-     * implementation of security class
+     * implementation of Security class
      *
      * @var Smarty_Security
      */
@@ -776,7 +776,7 @@ class Smarty extends Smarty_Internal_TemplateBase
     }
 
     /**
-     * Loads security class and enables security
+     * Loads Security class and enables Security
      *
      * @param  string|Smarty_Security $security_class if a string is used, it must be class-name
      *
@@ -790,7 +790,7 @@ class Smarty extends Smarty_Internal_TemplateBase
     }
 
     /**
-     * Disable security
+     * Disable Security
      *
      * @return Smarty current Smarty instance for chaining
      */

@@ -3,42 +3,41 @@ require_once dirname(__FILE__) . '/../init.php';
 
 switch ($action) {
     // <editor-fold defaultstate="collapsed" desc="akcje Home">
-    default : // 'home'
+    case 'home' :
         include_once getConf()->root_path . '\app\Home\HomeCtrl.class.php';
         $ctrl = new HomeCtrl();
         $ctrl->Index();
+        exit();
         break;
     case 'about' :
         include_once getConf()->root_path . '\app\Home\HomeCtrl.class.php';
         $ctrl = new HomeCtrl();
         $ctrl->About();
+        exit();
         break;
     case 'classes' :
         include_once getConf()->root_path . '\app\Home\HomeCtrl.class.php';
         $ctrl = new HomeCtrl();
         $ctrl->Classes();
+        exit();
         break;
     case 'contact' :
         include_once getConf()->root_path . '\app\Home\HomeCtrl.class.php';
         $ctrl = new HomeCtrl();
         $ctrl->Contact();
+        exit();
         break;
     case 'schedule' :
         include_once getConf()->root_path . '\app\Home\HomeCtrl.class.php';
         $ctrl = new HomeCtrl();
         $ctrl->Schedule();
+        exit();
         break;
     case 'trainer' :
         include_once getConf()->root_path . '\app\Home\HomeCtrl.class.php';
         $ctrl = new HomeCtrl();
         $ctrl->Trainer();
-        break;
-    // </editor-fold>
-    // <editor-fold defaultstate="collapsed" desc="akcje użytkownika">
-    case 'loginGet' :
-        include_once getConf()->root_path . '\app\User\UserCtrl.class.php';
-        $ctrl = new UserCtrl();
-        $ctrl->Route($action);
+        exit();
         break;
     case 'login' :
         include_once getConf()->root_path . '\app\User\UserCtrl.class.php';
@@ -51,6 +50,22 @@ switch ($action) {
         $ctrl->Route($action);
         break;
     case 'regi' :
+        include_once getConf()->root_path . '\app\User\UserCtrl.class.php';
+        $ctrl = new UserCtrl();
+        $ctrl->Route($action);
+        break;
+    // </editor-fold>
+}
+include getConf()->root_path . '\app\Security\check.php';
+
+switch ($action) {
+    // <editor-fold defaultstate="collapsed" desc="akcje użytkownika">
+    default :
+        include_once getConf()->root_path . '\app\Home\HomeCtrl.class.php';
+        $ctrl = new HomeCtrl();
+        $ctrl->Index();
+        break;
+    case 'loginGet' :
         include_once getConf()->root_path . '\app\User\UserCtrl.class.php';
         $ctrl = new UserCtrl();
         $ctrl->Route($action);

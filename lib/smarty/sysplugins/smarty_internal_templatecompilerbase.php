@@ -171,7 +171,7 @@ abstract class Smarty_Internal_TemplateCompilerBase
     public $blockOrFunctionCode = '';
 
     /**
-     * php_handling setting either from Smarty or security
+     * php_handling setting either from Smarty or Security
      *
      * @var int
      */
