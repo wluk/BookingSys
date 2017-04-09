@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2017-04-08 14:21:53
+/* Smarty version 3.1.30, created on 2017-04-09 09:03:59
   from "C:\xampp\htdocs\silka\public\main.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_58e8d5e1d18e64_26622953',
+  'unifunc' => 'content_58e9dcdfbf6592_63366940',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '961b449d6c5458e514d08f2b757a319aa28c388c' => 
     array (
       0 => 'C:\\xampp\\htdocs\\silka\\public\\main.html',
-      1 => 1491599934,
+      1 => 1491721407,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_58e8d5e1d18e64_26622953 (Smarty_Internal_Template $_smarty_tpl) {
+function content_58e9dcdfbf6592_63366940 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, false);
 ?>
@@ -106,7 +106,7 @@ $_smarty_tpl->inheritance->init($_smarty_tpl, false);
     <![endif]-->
 
     <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_10942565558e8d5e1846040_80944829', 'head');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_209473166858e9dcdf6860b8_13485321', 'head');
 ?>
 
 </head>
@@ -140,11 +140,18 @@ $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_10942565558e8d5e18
                                     </ul>
                                 </li>-->
                                 <li><a href="?action=classes">Zajecia</a></li>
-                                <li><a href="?action=book">Harmonogrma</a></li>
+                                <?php if (isset($_SESSION['user_role']) && $_SESSION['user_role'] == 'admin') {?>
+                                <li><a href="?action=showClassesAP">Harmonogrma</a></li>
+                                <?php } else { ?>
+                                <li><a href="?action=showClasses">Harmonogrma</a></li>
+                                <?php }?>
                                 <li><a href="?action=trainer">Trenerzy</a></li>
                                 <li><a href="?action=about">O nas</a></li>
                                 <li><a href="?action=contact">Kontakt</a></li>
-                                <?php if (isset($_smarty_tpl->tpl_vars['isLoged']->value)) {?>
+                                <?php if (isset($_SESSION['user_role']) && $_SESSION['user_role'] == 'admin') {?>
+                                <li><a href="?action=getPerson">Klubowicze</a></li>
+                                <?php }?>
+                                <?php if (isset($_SESSION['isLoged']) && $_SESSION['isLoged']) {?>
                                 <li><a href="?action=logout">WYLOGUJ</a></li>
                                 <?php }?>
                             </ul>
@@ -155,24 +162,72 @@ $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_10942565558e8d5e18
         </div>
         <!-- end:fh5co-header -->
         <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_181488022558e8d5e19ac171_91108754', 'hero');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_87576016858e9dcdf8e4822_42437978', 'hero');
 ?>
-
 
 
         <div class="container">
             <br>
-            <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_143398262358e8d5e1c22da9_84426350', 'msg');
+            <?php if ($_smarty_tpl->tpl_vars['msgs']->value->isInfo()) {?>
+            <br>
+            <div class="row">
+                <div class="box">
+                    <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['msgs']->value->getInfos(), 'foo');
+if ($_from !== null) {
+foreach ($_from as $_smarty_tpl->tpl_vars['foo']->value) {
+?>
+                    <div class="alert alert-info alert-dismissible" role="alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span
+                                aria-hidden="true">&times;</span></button>
+                        <?php echo $_smarty_tpl->tpl_vars['foo']->value;?>
+
+                    </div>
+                    <?php
+}
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
 ?>
 
+                </div>
+            </div>
             <br>
+            <?php }?>
+            <?php if ($_smarty_tpl->tpl_vars['msgs']->value->isError()) {?>
+            <br>
+            <div class="row">
+                <div class="box">
+                    <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['msgs']->value->getInfos(), 'foo');
+if ($_from !== null) {
+foreach ($_from as $_smarty_tpl->tpl_vars['foo']->value) {
+?>
+                    <div class="alert alert-danger alert-dismissible" role="alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span
+                                aria-hidden="true">&times;</span></button>
+                        <?php echo $_smarty_tpl->tpl_vars['foo']->value;?>
+
+                    </div>
+                    <?php
+}
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
+?>
+
+                </div>
+            </div>
+            <br>
+            <?php }?>
+            <?php echo $_smarty_tpl->tpl_vars['msgs']->value->clear();?>
+
+
         </div>
         <div class="container">
             <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_31998670058e8d5e1c56c75_56154507', 'top');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_174727503558e9dcdfae8729_43352895', 'top');
 ?>
 
+            <br>
         </div>
 
         <!-- fh5co-blog-section -->
@@ -291,14 +346,14 @@ $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_31998670058e8d5e1c
 >
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_7889051458e8d5e1cf84b4_46912042', 'script');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_100034619958e9dcdfbc4682_35536849', 'script');
 ?>
 
 </body>
 
 </html><?php }
 /* {block 'head'} */
-class Block_10942565558e8d5e1846040_80944829 extends Smarty_Internal_Block
+class Block_209473166858e9dcdf6860b8_13485321 extends Smarty_Internal_Block
 {
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
@@ -307,7 +362,7 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 }
 /* {/block 'head'} */
 /* {block 'hero'} */
-class Block_181488022558e8d5e19ac171_91108754 extends Smarty_Internal_Block
+class Block_87576016858e9dcdf8e4822_42437978 extends Smarty_Internal_Block
 {
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
@@ -317,66 +372,8 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 }
 }
 /* {/block 'hero'} */
-/* {block 'msg'} */
-class Block_143398262358e8d5e1c22da9_84426350 extends Smarty_Internal_Block
-{
-public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
-?>
-
-                <?php if ($_smarty_tpl->tpl_vars['msgs']->value->isInfo()) {?>
-                    <div class="row" style="margin-bottom: -110px;">
-                        <div class="box">
-                            <?php
-$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['msgs']->value->getInfos(), 'foo');
-if ($_from !== null) {
-foreach ($_from as $_smarty_tpl->tpl_vars['foo']->value) {
-?>
-                            <div class="alert alert-info alert-dismissible" role="alert">
-                                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span
-                                        aria-hidden="true">&times;</span></button>
-                                <?php echo $_smarty_tpl->tpl_vars['foo']->value;?>
-
-                            </div>
-                            <?php
-}
-}
-$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
-?>
-
-                        </div>
-                    </div>
-                <?php }?>
-                <?php if ($_smarty_tpl->tpl_vars['msgs']->value->isError()) {?>
-                    <div class="row" style="margin-bottom: -110px;">
-                        <div class="box">
-                            <?php
-$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['msgs']->value->getInfos(), 'foo');
-if ($_from !== null) {
-foreach ($_from as $_smarty_tpl->tpl_vars['foo']->value) {
-?>
-                            <div class="alert alert-danger alert-dismissible" role="alert">
-                                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span
-                                        aria-hidden="true">&times;</span></button>
-                                <?php echo $_smarty_tpl->tpl_vars['foo']->value;?>
-
-                            </div>
-                            <?php
-}
-}
-$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
-?>
-
-                        </div>
-                    </div>
-                <?php }?>
-                <?php echo $_smarty_tpl->tpl_vars['msgs']->value->clear();?>
-
-            <?php
-}
-}
-/* {/block 'msg'} */
 /* {block 'top'} */
-class Block_31998670058e8d5e1c56c75_56154507 extends Smarty_Internal_Block
+class Block_174727503558e9dcdfae8729_43352895 extends Smarty_Internal_Block
 {
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
@@ -387,7 +384,7 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 }
 /* {/block 'top'} */
 /* {block 'script'} */
-class Block_7889051458e8d5e1cf84b4_46912042 extends Smarty_Internal_Block
+class Block_100034619958e9dcdfbc4682_35536849 extends Smarty_Internal_Block
 {
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>

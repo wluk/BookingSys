@@ -1,18 +1,21 @@
 <?php
-function getFromRequest($param_name){
-	return isset($_REQUEST [$param_name]) ? $_REQUEST [$param_name] : 'index';
+function getFromRequest($param_name)
+{
+    return isset($_REQUEST [$param_name]) ? $_REQUEST [$param_name] : 'index';
 }
 
-function forwardTo($page){
-	global $action;
-	$action = $page;
-	include getConf()->root_path.getConf()->action_script;
-	exit;
+function forwardTo($page)
+{
+    global $action;
+    $action = $page;
+    include getConf()->root_path . getConf()->action_script;
+    exit;
 }
 
-function redirectTo($page){
-	header("Location: ".getConf()->action_url.$page);
-	exit;
+function redirectTo($page)
+{
+    header("Location: " . getConf()->action_url . $page);
+    exit;
 }
 
 function validateDate($date, $format)
@@ -21,4 +24,4 @@ function validateDate($date, $format)
     return $d && $d->format($format) == $date;
 }
 
-?>
+

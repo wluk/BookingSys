@@ -149,5 +149,4 @@ if (typeof jQuery === 'undefined') {
             }, 2000);
         }
     }
-
 })(jQuery);

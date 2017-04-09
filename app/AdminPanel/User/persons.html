@@ -86,10 +86,10 @@
                 <div class="panel-heading">
                     <div class="row">
                         <div class="col col-xs-6">
-                            <h3 class="panel-title">Panel Heading</h3>
+                            <h3 class="panel-title">Klubowicze</h3>
                         </div>
                         <div class="col col-xs-6 text-right">
-                            <button type="button" class="btn btn-sm btn-primary btn-create">Create New</button>
+                            <a href="?action=registration"><button type="button" class="btn btn-sm btn-primary btn-create">+ klubowicz</button></a>
                         </div>
                     </div>
                 </div>
@@ -107,7 +107,7 @@
                         </tr>
                         </thead>
                         <tbody>
-                        {foreach from=$return item=foo}
+                        {foreach from=$result item=foo}
                         <tr>
                             <td class="hidden-xs">{$foo.ID}</td>
                             <td>{$foo.LOGIN}</td>
@@ -116,9 +116,9 @@
                             <td>{$foo.PHONE}</td>
                             <td>{$foo.ROLE}</td>
                             <td align="center">
-                                <a class="btn btn-default" href="?action=editUser&id={$foo.ID}"><em
+                                <a class="btn btn-default" href="?action=editPerson&id={$foo.ID}"><em
                                         class="fa fa-pencil"></em></a>
-                                <a class="btn btn-danger" href="?action=delUser&id={$foo.ID}"><em
+                                <a class="btn btn-danger" href="?action=deletePerson&id={$foo.ID}"><em
                                         class="fa fa-trash"></em></a>
                             </td>
                         </tr>
@@ -129,13 +129,13 @@
                 </div>
                 <div class="panel-footer" style="padding-bottom: 28px;">
                     <div class="row">
-                        <div class="col col-xs-4">Strona 1 z {$page}
+                        <div class="col col-xs-4">Strona {$currentPage} z {$page}
                         </div>
                         <div class="col col-xs-8">
                             <ul class="pagination hidden-xs pull-right">
                                 {for $i = 1 to $page}
                                 <li>
-                                    <a href="?action=person&page={$i}">{$i}</a>
+                                    <a href="?action=getPerson&page={$i}">{$i}</a>
                                 </li>
                                 {/for}
                             </ul>

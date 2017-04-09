@@ -2,7 +2,7 @@
 require_once dirname(__FILE__) . '/../init.php';
 
 switch ($action) {
-    //  HomeCtrl
+    // <editor-fold defaultstate="collapsed" desc="akcje Home">
     default : // 'home'
         include_once getConf()->root_path . '\app\Home\HomeCtrl.class.php';
         $ctrl = new HomeCtrl();
@@ -33,68 +33,89 @@ switch ($action) {
         $ctrl = new HomeCtrl();
         $ctrl->Trainer();
         break;
-    //	Rejestracja
-    case 'booking' :
+    // </editor-fold>
+    // <editor-fold defaultstate="collapsed" desc="akcje użytkownika">
+    case 'loginGet' :
         include_once getConf()->root_path . '\app\User\UserCtrl.class.php';
         $ctrl = new UserCtrl();
-        $ctrl->Login();
+        $ctrl->Route($action);
         break;
     case 'login' :
         include_once getConf()->root_path . '\app\User\UserCtrl.class.php';
         $ctrl = new UserCtrl();
-        $ctrl->doLogin();
+        $ctrl->Route($action);
         break;
-    case 'reg' :
+    case 'registration' :
         include_once getConf()->root_path . '\app\User\UserCtrl.class.php';
         $ctrl = new UserCtrl();
-        $ctrl->registration();
+        $ctrl->Route($action);
         break;
     case 'regi' :
         include_once getConf()->root_path . '\app\User\UserCtrl.class.php';
         $ctrl = new UserCtrl();
-        $ctrl->doRegistration();
+        $ctrl->Route($action);
         break;
-    case 'book' :
+    case 'showClasses' :
         include_once getConf()->root_path . '\app\User\UserCtrl.class.php';
         $ctrl = new UserCtrl();
-        $ctrl->book();
+        $ctrl->Route($action);
         break;
     case 'statute' :
         include_once getConf()->root_path . '\app\User\UserCtrl.class.php';
         $ctrl = new UserCtrl();
-        $ctrl->registration();
+        $ctrl->Route($action);
         break;
     case 'logout' :
         include_once getConf()->root_path . '\app\User\UserCtrl.class.php';
         $ctrl = new UserCtrl();
-        $ctrl->LogOut();
+        $ctrl->Route($action);
         break;
-    // Akcje zajec
     case 'join' :
-        include_once getConf()->root_path . '\app\User\ActionCtrl.class.php';
-        $ctrl = new ActionCtrl();
-        $ctrl->JoinClasses();
+        include_once getConf()->root_path . '\app\User\UserCtrl.class.php';
+        $ctrl = new UserCtrl();
+        $ctrl->Route($action);
         break;
     case 'leave' :
-        include_once getConf()->root_path . '\app\User\ActionCtrl.class.php';
-        $ctrl = new ActionCtrl();
-        $ctrl->LeaveClesses();
+        include_once getConf()->root_path . '\app\User\UserCtrl.class.php';
+        $ctrl = new UserCtrl();
+        $ctrl->Route($action);
         break;
-    //Admin
-    case 'person' :
-        include_once getConf()->root_path . '\app\AdminPanel\AdminCtrl.class.php';
-        $ctrl = new AdminCtrl();
-        $ctrl->GetPersons();
+    case 'search' :
+        include_once getConf()->root_path . '\app\User\UserCtrl.class.php';
+        $ctrl = new UserCtrl();
+        $ctrl->Route($action);
         break;
-    case 'editUser' :
-        include_once getConf()->root_path . '\app\AdminPanel\AdminCtrl.class.php';
-        $ctrl = new AdminCtrl();
-        $ctrl->EditUser();
+    // </editor-fold>
+    // <editor-fold defaultstate="collapsed" desc="Panel Administracyjny">
+    case 'getPerson' :
+        include_once getConf()->root_path . '\app\AdminPanel\AdminPanelCtrl.class.php';
+        $ctrl = new AdminPanelCtrl();
+        $ctrl->Route($action);
         break;
-    case 'delUser' :
-        include_once getConf()->root_path . '\app\AdminPanel\AdminCtrl.class.php';
-        $ctrl = new AdminCtrl();
-        $ctrl->DelUser();
+    case 'deletePerson' :
+        include_once getConf()->root_path . '\app\AdminPanel\AdminPanelCtrl.class.php';
+        $ctrl = new AdminPanelCtrl();
+        $ctrl->Route($action);
         break;
+    case 'editPerson' :
+        include_once getConf()->root_path . '\app\AdminPanel\AdminPanelCtrl.class.php';
+        $ctrl = new AdminPanelCtrl();
+        $ctrl->Route($action);
+        break;
+    case 'showClassesAP' :
+        include_once getConf()->root_path . '\app\AdminPanel\AdminPanelCtrl.class.php';
+        $ctrl = new AdminPanelCtrl();
+        $ctrl->Route($action);
+        break;
+    case 'addClasses' :
+        include_once getConf()->root_path . '\app\AdminPanel\AdminPanelCtrl.class.php';
+        $ctrl = new AdminPanelCtrl();
+        $ctrl->AddClasses();
+        break;
+    case 'cancelClasses' :
+        include_once getConf()->root_path . '\app\AdminPanel\AdminPanelCtrl.class.php';
+        $ctrl = new AdminPanelCtrl();
+        $ctrl->Route($action);
+        break;
+    // </editor-fold>
 }
-?>

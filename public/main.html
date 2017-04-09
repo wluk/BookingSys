@@ -97,11 +97,18 @@
                                     </ul>
                                 </li>-->
                                 <li><a href="?action=classes">Zajecia</a></li>
-                                <li><a href="?action=book">Harmonogrma</a></li>
+                                {if isset($smarty.session.user_role) && $smarty.session.user_role eq 'admin'}
+                                <li><a href="?action=showClassesAP">Harmonogrma</a></li>
+                                {else}
+                                <li><a href="?action=showClasses">Harmonogrma</a></li>
+                                {/if}
                                 <li><a href="?action=trainer">Trenerzy</a></li>
                                 <li><a href="?action=about">O nas</a></li>
                                 <li><a href="?action=contact">Kontakt</a></li>
-                                {if isset($isLoged)}
+                                {if isset($smarty.session.user_role) && $smarty.session.user_role eq 'admin'}
+                                <li><a href="?action=getPerson">Klubowicze</a></li>
+                                {/if}
+                                {if isset($smarty.session.isLoged) && $smarty.session.isLoged}
                                 <li><a href="?action=logout">WYLOGUJ</a></li>
                                 {/if}
                             </ul>
@@ -115,44 +122,46 @@
 
         {/block}
 
-
         <div class="container">
             <br>
-            {block name=msg}
-                {if $msgs->isInfo()}
-                    <div class="row" style="margin-bottom: -110px;">
-                        <div class="box">
-                            {foreach from=$msgs->getInfos() item=foo}
-                            <div class="alert alert-info alert-dismissible" role="alert">
-                                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span
-                                        aria-hidden="true">&times;</span></button>
-                                {$foo}
-                            </div>
-                            {/foreach}
-                        </div>
-                    </div>
-                {/if}
-                {if $msgs->isError()}
-                    <div class="row" style="margin-bottom: -110px;">
-                        <div class="box">
-                            {foreach from=$msgs->getInfos() item=foo}
-                            <div class="alert alert-danger alert-dismissible" role="alert">
-                                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span
-                                        aria-hidden="true">&times;</span></button>
-                                {$foo}
-                            </div>
-                            {/foreach}
-                        </div>
-                    </div>
-                {/if}
-                {$msgs->clear()}
-            {/block}
+            {if $msgs->isInfo()}
             <br>
+            <div class="row">
+                <div class="box">
+                    {foreach from=$msgs->getInfos() item=foo}
+                    <div class="alert alert-info alert-dismissible" role="alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span
+                                aria-hidden="true">&times;</span></button>
+                        {$foo}
+                    </div>
+                    {/foreach}
+                </div>
+            </div>
+            <br>
+            {/if}
+            {if $msgs->isError()}
+            <br>
+            <div class="row">
+                <div class="box">
+                    {foreach from=$msgs->getInfos() item=foo}
+                    <div class="alert alert-danger alert-dismissible" role="alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span
+                                aria-hidden="true">&times;</span></button>
+                        {$foo}
+                    </div>
+                    {/foreach}
+                </div>
+            </div>
+            <br>
+            {/if}
+            {$msgs->clear()}
+
         </div>
         <div class="container">
             {block name=top}
 
             {/block}
+            <br>
         </div>
 
         <!-- fh5co-blog-section -->

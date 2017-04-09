@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2017-04-08 14:21:53
+/* Smarty version 3.1.30, created on 2017-04-09 07:14:17
   from "C:\xampp\htdocs\silka\app\Home\index.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_58e8d5e140e2c3_65145607',
+  'unifunc' => 'content_58e9c329bad553_69356197',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '3f4ec63f259b34bda9c306c685f60845d8a659d8' => 
     array (
       0 => 'C:\\xampp\\htdocs\\silka\\app\\Home\\index.html',
-      1 => 1491653995,
+      1 => 1491664627,
       2 => 'file',
     ),
   ),
@@ -20,20 +20,20 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_58e8d5e140e2c3_65145607 (Smarty_Internal_Template $_smarty_tpl) {
+function content_58e9c329bad553_69356197 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
  <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_64069914958e8d5e11302b7_31603553', 'hero');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_56277679758e9c329740885_01262240', 'hero');
 ?>
  <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_162375692058e8d5e13db537_53767008', 'top');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_125100107658e9c329b792a7_83275567', 'top');
 $_smarty_tpl->inheritance->endChild();
 $_smarty_tpl->_subTemplateRender(($_smarty_tpl->tpl_vars['conf']->value->root_path).("\public\main.html"), $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 2, true);
 }
 /* {block 'hero'} */
-class Block_64069914958e8d5e11302b7_31603553 extends Smarty_Internal_Block
+class Block_56277679758e9c329740885_01262240 extends Smarty_Internal_Block
 {
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
@@ -47,7 +47,7 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
                 <div class="row">
                     <div class="col-md-7">
                         <h2>W zdrowym <b>ciele</b> zdrowy duch</h2>
-                        <span><a class="btn btn-primary" href="?action=reg">Zacznij już dziś!</a></span>
+                        <span><a class="btn btn-primary" href="?action=registration">Zacznij już dziś!</a></span>
                     </div>
                 </div>
             </div>
@@ -59,7 +59,7 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 }
 /* {/block 'hero'} */
 /* {block 'top'} */
-class Block_162375692058e8d5e13db537_53767008 extends Smarty_Internal_Block
+class Block_125100107658e9c329b792a7_83275567 extends Smarty_Internal_Block
 {
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
@@ -587,7 +587,7 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
                     <div class="animate-box">
                         <h1>Program <b>LATO</b></h1>
                         <p>promocja 20%</p>
-                        <a href="?action=reg" class="btn btn-primary">Dołącz już dziś</a>
+                        <a href="?action=registration" class="btn btn-primary">Dołącz już dziś</a>
                     </div>
                 </div>
             </div>
